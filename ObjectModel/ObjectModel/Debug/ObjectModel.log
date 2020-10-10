@@ -1,0 +1,5 @@
+﻿  CopySemantic.cpp
+  ObjectModel.cpp
+F:\study\code\C++\test\ObjectModel\ObjectModel\FuncSemantic.h(39,5): warning C4101: “f1”: 未引用的局部变量
+  正在生成代码...
+  ObjectModel.vcxproj -> F:\study\code\C++\test\ObjectModel\Debug\ObjectModel.exe

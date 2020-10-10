@@ -1,0 +1,8 @@
+﻿  BasicSum.cpp
+F:\study\code\C++\test\BasicSum\BasicSum\BasicSum.cpp(5,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+F:\study\code\C++\test\BasicSum\BasicSum\BasicSum.cpp(11,24): warning C4305: “初始化”: 从“__int64”到“int”截断
+F:\study\code\C++\test\BasicSum\BasicSum\BasicSum.cpp(11,13): warning C4309: “初始化”: 截断常量值
+  MyTest1.cpp
+  Test.cpp
+  正在生成代码...
+  BasicSum.vcxproj -> F:\study\code\C++\test\BasicSum\Debug\BasicSum.exe
