@@ -40,3 +40,38 @@ private:
 };
 
 void test_MyTest1_0();
+
+int testparams(int count, ...);
+
+
+template<typename ... Args> 
+void g(Args ... args) 
+{
+	cout << sizeof...(Args) << endl;
+	cout << sizeof...(args) << endl;
+}
+
+template<typename T, typename... Args>
+ostream& print(ostream& os, const T& t, const Args&... rest)//扩展模板参数包Args，将模式const Args&应用到模板参数Args
+{                      //中的每个元素，因此，此模式的扩展结果是一个逗号分隔的零个或多个类型的列表，每个类型都是const type&
+	os << t << ", ";
+	return print(os, rest...);    // 扩展rest，为print调用生成实参列表
+}
+
+class ABC
+{
+public:
+	ABC() {}
+	ABC(ABC&&) {}
+};
+
+class Ptr
+{
+public:
+	Ptr(std::unique_ptr<ABC>& p)
+	:p_(std::move(p))
+	{}
+
+private:
+	std::unique_ptr<ABC> p_;
+};

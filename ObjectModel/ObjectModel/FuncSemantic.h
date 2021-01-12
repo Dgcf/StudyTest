@@ -36,7 +36,7 @@ public:
 
 inline void Test_Fun()
 {
-	F1 f1;
+	//F1 f1;
 	cout << &F1::F1_test_0 << endl;
 	cout << &F1::F1_test_1 << endl;
 	cout << &F1::i0 << endl;

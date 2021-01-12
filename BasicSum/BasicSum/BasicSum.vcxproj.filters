@@ -24,6 +24,9 @@
     <ClCompile Include="MyTest1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="MacroTest.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Test.h">
@@ -33,6 +36,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="MyTest1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MacroTest.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

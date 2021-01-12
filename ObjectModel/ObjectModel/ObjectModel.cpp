@@ -28,6 +28,6 @@ void Test_stack()
 
 int main()
 {
-    Test_CopySemantic();
+    test222();
 }
 

@@ -1,0 +1,246 @@
+<?xml  version="1.0" encoding="utf-8"?>
+<!--V0.0.0.1 -->
+<!--
+  修改版本      修改日期    修改单             修改人   修改内容
+ -->
+<T2SDKUST note="UFX适配配置文件">
+    <functions srcstruct="Start" desstruct ="End" note="功能号和字段转换定义">
+        <!-- 登录 -->
+        <function srcfunc="10001" destfunc="" note="登录">
+            <requestfield>
+                <field srcfield="operator_no" srctype ="S" destfield="OperatorID"/>
+                <field srcfield="password" srctype ="S" destfield="Password"/>
+                <field srcfield="mac_address" srctype ="S" destfield="MacAddress"/>
+                <field srcfield="ip_address" srctype ="S" destfield="IPAddress"/>
+                <field srcfield="hd_volserial" srctype ="S" destfield=""/>
+                <field srcfield="op_station" srctype ="S" destfield=""/>
+                <field srcfield="terminal_info" srctype ="S" destfield="UserApplicationInfo"/>
+                <field srcfield="authorization_id" srctype ="S" destfield=""/>
+                <field srcfield="login_time" srctype ="I" destfield=""/>
+                <field srcfield="verification_code" srctype ="S" destfield="AuthCode"/>
+                <field srcfield="app_id" srctype ="S" destfield=""/>
+                <field srcfield="authorize_code" srctype ="S" destfield=""/>
+                <field srcfield="port_id" srctype ="I" destfield=""/>
+            </requestfield>
+            <answerfield>
+                <field srcfield="user_token" srctype ="S" destfield=""/>
+                <field srcfield="version_no" srctype ="S" destfield=""/>
+            </answerfield>
+        </function>
+        <function srcfunc="10002" destfunc="" note="登出">
+            <requestfield>
+                <field srcfield="user_token" srctype ="S" destfield=""/>
+            </requestfield>
+            <answerfield>
+                <field srcfield="" srctype ="" destfield=""/>
+            </answerfield>
+        </function>
+        <function srcfunc="91005" destfunc="" note="期权交易委托">
+            <requestfield>
+                <field srcfield="user_token" srctype ="S" destfield=""/>
+                <field srcfield="batch_no" srctype ="" destfield=""/>
+                <field srcfield="account_code" srctype ="" destfield="AccountIndex"/>
+                <field srcfield="asset_no" srctype ="" destfield=""/>
+                <field srcfield="combi_no" srctype ="" destfield=""/>
+                <field srcfield="instance_no" srctype ="" destfield=""/>
+                <field srcfield="stockholder_id" srctype ="" destfield=""/>
+                <field srcfield="report_seat" srctype ="" destfield=""/>
+                <field srcfield="market_no" srctype ="" destfield="ExchangeID"/>
+                <field srcfield="stock_code" srctype ="" destfield=""/>
+                <field srcfield="entrust_direction" srctype ="" destfield="Direction"/>
+                <field srcfield="futures_direction" srctype ="" destfield="OffsetFlag"/>
+                <field srcfield="close_direction" srctype ="" destfield=""/>
+                <field srcfield="price_type" srctype ="" destfield=""/>
+                <field srcfield="entrust_price" srctype ="" destfield="OrderPrice"/>
+                <field srcfield="entrust_amount" srctype ="" destfield="OrderVolume"/>
+                <field srcfield="covered_flag" srctype ="" destfield=""/>
+                <field srcfield="extsystem_id" srctype ="" destfield=""/>
+                <field srcfield="third_reff" srctype ="" destfield=""/>
+                <field srcfield="mac_address" srctype ="" destfield=""/>
+                <field srcfield="ip_address" srctype ="" destfield=""/>
+                <field srcfield="hd_volserial" srctype ="" destfield=""/>
+                <field srcfield="op_station" srctype ="" destfield=""/>
+                <field srcfield="terminal_info" srctype ="" destfield=""/>
+            </requestfield>
+            <answerfield>
+                <field srcfield="batch_no" srctype ="" destfield=""/>
+                <field srcfield="entrust_no" srctype ="" destfield=""/>
+                <field srcfield="extsystem_id" srctype ="" destfield=""/>
+                <field srcfield="entrust_fail_code" srctype ="" destfield="ErrorID"/>
+                <field srcfield="fail_cause" srctype ="" destfield="ErrorMsg"/>
+                <field srcfield="risk_serial_no" srctype ="" destfield=""/>
+            </answerfield>
+        </function>
+        <function srcfunc="91004" destfunc="" note="期货交易委托">
+            <requestfield>
+                <field srcfield="user_token" srctype ="" destfield=""/>
+                <field srcfield="batch_no" srctype ="" destfield=""/>
+                <field srcfield="account_code" srctype ="" destfield="AccountIndex"/>
+                <field srcfield="asset_no" srctype ="" destfield=""/>
+                <field srcfield="combi_no" srctype ="" destfield=""/>
+                <field srcfield="instance_no" srctype ="" destfield=""/>
+                <field srcfield="stockholder_id" srctype ="" destfield=""/>
+                <field srcfield="market_no" srctype ="" destfield="ExchangeID"/>
+                <field srcfield="stock_code" srctype ="" destfield=""/>
+                <field srcfield="entrust_direction" srctype ="" destfield="Direction"/>
+                <field srcfield="futures_direction" srctype ="" destfield="OffsetFlag"/>
+                <field srcfield="close_direction" srctype ="" destfield=""/>
+                <field srcfield="price_type" srctype ="" destfield=""/>
+                <field srcfield="entrust_price" srctype ="" destfield="OrderPrice"/>
+                <field srcfield="entrust_amount" srctype ="" destfield="OrderVolume"/>
+                <field srcfield="limit_deal_amount" srctype ="" destfield="MinVolume"/>
+                <field srcfield="invest_type" srctype ="" destfield="ProductIndex"/>
+                <field srcfield="extsystem_id" srctype ="" destfield=""/>
+                <field srcfield="third_reff" srctype ="" destfield=""/>
+                <field srcfield="mac_address" srctype ="" destfield=""/>
+                <field srcfield="ip_address" srctype ="" destfield=""/>
+                <field srcfield="hd_volserial" srctype ="" destfield=""/>
+                <field srcfield="op_station" srctype ="" destfield=""/>
+                <field srcfield="terminal_info" srctype ="" destfield=""/>
+            </requestfield>
+            <answerfield>
+                <field srcfield="batch_no" srctype ="" destfield=""/>
+                <field srcfield="entrust_no" srctype ="" destfield=""/>
+                <field srcfield="extsystem_id" srctype ="" destfield=""/>
+                <field srcfield="entrust_fail_code" srctype ="" destfield=""/>
+                <field srcfield="fail_cause" srctype ="" destfield=""/>
+                <field srcfield="risk_serial_no" srctype ="" destfield=""/>
+            </answerfield>
+        </function>
+        <function srcfunc="91105;91106" destfunc="" note="普通交易撤单">
+            <requestfield>
+                <field srcfield="user_token" srctype ="" destfield=""/>
+                <field srcfield="entrust_no" srctype ="" destfield=""/>
+                <field srcfield="mac_address" srctype ="" destfield=""/>
+                <field srcfield="ip_address" srctype ="" destfield=""/>
+                <field srcfield="hd_volserial" srctype ="" destfield=""/>
+                <field srcfield="op_station" srctype ="" destfield=""/>
+                <field srcfield="terminal_info" srctype ="" destfield=""/>
+            </requestfield>
+            <answerfield>
+                <field srcfield="entrust_no" srctype ="" destfield=""/>
+                <field srcfield="market_no" srctype ="" destfield=""/>
+                <field srcfield="stock_code" srctype ="" destfield=""/>
+                <field srcfield="success_flag" srctype ="" destfield=""/>
+                <field srcfield="fail_cause" srctype ="" destfield=""/>
+            </answerfield>
+        </function>
+        <function srcfunc="91014" destfunc="" note="期权报价委托">
+            <requestfield>
+                <field srcfield="user_token" srctype ="" destfield=""/>
+                <field srcfield="account_code" srctype ="" destfield=""/>
+                <field srcfield="asset_no" srctype ="" destfield=""/>
+                <field srcfield="combi_no" srctype ="" destfield=""/>
+                <field srcfield="instance_no" srctype ="" destfield=""/>
+                <field srcfield="stockholder_id" srctype ="" destfield=""/>
+                <field srcfield="report_seat" srctype ="" destfield=""/>
+                <field srcfield="inquiry_id" srctype ="" destfield=""/>
+                <field srcfield="market_no" srctype ="" destfield="ExchangeID"/>
+                <field srcfield="stock_code" srctype ="" destfield=""/>
+                <field srcfield="buy_direction" srctype ="" destfield="BidOffsetFlag"/>
+                <field srcfield="buy_price" srctype ="" destfield="BidOrderPrice"/>
+                <field srcfield="buy_amount" srctype ="" destfield="BidOrderVolume"/>
+                <field srcfield="sell_direction" srctype ="" destfield="AskOffsetFlag"/>
+                <field srcfield="sell_price" srctype ="" destfield="AskOrderPrice"/>
+                <field srcfield="sell_amount" srctype ="" destfield="AskOrderVolume"/>
+                <field srcfield="extsystem_id" srctype ="" destfield="third_reff"/>
+                <field srcfield="third_reff" srctype ="" destfield=""/>
+                <field srcfield="mac_address" srctype ="" destfield=""/>
+                <field srcfield="ip_address" srctype ="" destfield=""/>
+                <field srcfield="hd_volserial" srctype ="" destfield=""/>
+                <field srcfield="op_station" srctype ="" destfield=""/>
+                <field srcfield="terminal_info" srctype ="" destfield=""/>
+            </requestfield>
+            <answerfield>
+                <field srcfield="batch_no" srctype ="" destfield=""/>
+                <field srcfield="entrust_no" srctype ="" destfield=""/>
+                <field srcfield="entrust_serial_no_buy" srctype ="" destfield=""/>
+                <field srcfield="entrust_serial_no_sale" srctype ="" destfield=""/>
+                <field srcfield="extsystem_id" srctype ="" destfield=""/>
+                <field srcfield="entrust_fail_code" srctype ="" destfield="ErrorID"/>
+                <field srcfield="fail_cause" srctype ="" destfield="ErrorMsg"/>
+                <field srcfield="risk_serial_no" srctype ="" destfield=""/>
+            </answerfield>
+        </function>
+        <function srcfunc="91109" destfunc="" note="期权报价撤单">
+            <requestfield>
+                <field srcfield="user_token" srctype ="" destfield=""/>
+                <field srcfield="entrust_no" srctype ="" destfield=""/>
+                <field srcfield="mac_address" srctype ="" destfield=""/>
+                <field srcfield="ip_address" srctype ="" destfield=""/>
+                <field srcfield="hd_volserial" srctype ="" destfield=""/>
+                <field srcfield="op_station" srctype ="" destfield=""/>
+                <field srcfield="terminal_info" srctype ="" destfield=""/>
+            </requestfield>
+            <answerfield>
+                <field srcfield="" srctype ="" destfield=""/>
+            </answerfield>
+        </function>
+        <!--查询-->
+        <function srcfunc="32003;32004;" destfunc="" note="报单查询">
+            <requestfield>
+                <field srcfield="" srctype ="" destfield=""/>
+            </requestfield>
+            <answerfield>
+                <field srcfield="" srctype ="" destfield=""/>
+            </answerfield>
+        </function>
+         <!--是否对应UFX功能号71007，核心是否支持实例成交查询待确认-->
+        <function srcfunc="71007" destfunc="" note="成交查询">
+            <requestfield>
+                <field srcfield="" srctype ="" destfield=""/>
+            </requestfield>
+            <answerfield>
+                <field srcfield="" srctype ="" destfield=""/>
+            </answerfield>
+        </function>
+        <function srcfunc="32007" destfunc="" note="报价查询">
+            <requestfield>
+                <field srcfield="" srctype ="" destfield=""/>
+            </requestfield>
+            <answerfield>
+                <field srcfield="" srctype ="" destfield=""/>
+            </answerfield>
+        </function>
+        <function srcfunc="34001" destfunc="" note="资金查询">
+            <requestfield>
+                <field srcfield="" srctype ="" destfield=""/>
+            </requestfield>
+            <answerfield>
+                <field srcfield="" srctype ="" destfield=""/>
+            </answerfield>
+        </function>
+        <function srcfunc="31003;31004;31005" destfunc="" note="持仓汇总查询">
+            <requestfield>
+                <field srcfield="" srctype ="" destfield=""/>
+            </requestfield>
+            <answerfield>
+                <field srcfield="" srctype ="" destfield=""/>
+            </answerfield>
+        </function>
+        <function srcfunc="71001" destfunc="" note="实例创建">
+            <requestfield>
+                <field srcfield="" srctype ="" destfield=""/>
+            </requestfield>
+            <answerfield>
+                <field srcfield="" srctype ="" destfield=""/>
+            </answerfield>
+        </function>
+        <function srcfunc="71010" destfunc="" note="实例目标数量与操作份数更新">
+            <requestfield>
+                <field srcfield="" srctype ="" destfield=""/>
+            </requestfield>
+            <answerfield>
+                <field srcfield="" srctype ="" destfield=""/>
+            </answerfield>
+        </function>
+        <function srcfunc="71004" destfunc="" note="实例持仓查询">
+            <requestfield>
+                <field srcfield="" srctype ="" destfield=""/>
+            </requestfield>
+            <answerfield>
+                <field srcfield="" srctype ="" destfield=""/>
+            </answerfield>
+        </function>
+    </functions>
+</T2SDKUST>

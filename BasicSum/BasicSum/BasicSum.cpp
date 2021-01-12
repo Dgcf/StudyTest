@@ -3,6 +3,7 @@
 
 #include "Test.h"
 #include "MyTest1.h";
+#include "MacroTest.h"
 //extern int g_iTest;
 
 template<typename T>
@@ -28,10 +29,8 @@ void test(T&& t)
 
 int main()
 {
-    test(1);
-    int x = 1;
-    test(x);
-    test(std::forward<int>(x));
+    //Macro_ToStr();
+    Ptr()
     return 0;
 }
 

@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\visitor">
+      <UniqueIdentifier>{6e68c080-be57-4bda-8fa5-76c93d109e48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\visitor">
+      <UniqueIdentifier>{91346ca6-255e-4ff9-9b92-4970fe03639d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DesignModel.cpp">
@@ -24,6 +30,12 @@
     <ClCompile Include="ForTest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="visitable.cpp">
+      <Filter>源文件\visitor</Filter>
+    </ClCompile>
+    <ClCompile Include="visitor.cpp">
+      <Filter>源文件\visitor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Singletons.h">
@@ -31,6 +43,15 @@
     </ClInclude>
     <ClInclude Include="ForTest.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="common.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="visitable.h">
+      <Filter>头文件\visitor</Filter>
+    </ClInclude>
+    <ClInclude Include="visitor.h">
+      <Filter>头文件\visitor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

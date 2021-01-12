@@ -145,6 +145,7 @@
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="MoveTest.cpp" />
     <ClCompile Include="ObjectModel.cpp" />
+    <ClCompile Include="PureVirClass.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common.h" />
@@ -153,6 +154,7 @@
     <ClInclude Include="FuncSemantic.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="MoveTest.h" />
+    <ClInclude Include="PureVirClass.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

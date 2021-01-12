@@ -9,6 +9,7 @@
 #include "returntype.h"
 #include "TestType.h"
 #include "FuncTemp.h"
+#include "CTemBind.h"
 
 struct X
 {
@@ -27,7 +28,9 @@ struct EmptyStruct
 
 int main()
 {
-    cout << sizeof(EmptyStruct) << endl;
+    //cout << sizeof(EmptyStruct) << endl;
+    const char* s = "hello";
+    //const_test(s);
     return 0;
 }
 
