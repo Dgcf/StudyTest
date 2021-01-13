@@ -19,6 +19,12 @@
     <Filter Include="头文件\visitor">
       <UniqueIdentifier>{91346ca6-255e-4ff9-9b92-4970fe03639d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\CreativeMode">
+      <UniqueIdentifier>{2e0ae5bc-3e54-49ab-b64c-867aadc0ad9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\CreativeMode">
+      <UniqueIdentifier>{32a0b804-bcc6-4ad4-8d5b-4a41000448de}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DesignModel.cpp">
@@ -36,6 +42,9 @@
     <ClCompile Include="visitor.cpp">
       <Filter>源文件\visitor</Filter>
     </ClCompile>
+    <ClCompile Include="factory.cpp">
+      <Filter>源文件\CreativeMode</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Singletons.h">
@@ -52,6 +61,9 @@
     </ClInclude>
     <ClInclude Include="visitor.h">
       <Filter>头文件\visitor</Filter>
+    </ClInclude>
+    <ClInclude Include="factory.h">
+      <Filter>头文件\CreativeMode</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
