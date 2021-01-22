@@ -7,6 +7,7 @@ struct EmptyType {};
 
 namespace tl
 {
+	// 只为了携带型别信息
 	template<typename T, typename U>
 	struct TypeList
 	{
@@ -17,6 +18,7 @@ namespace tl
 
 }
 
+// 整数做为类型
 template<int v>
 struct Int2Type
 {
@@ -39,6 +41,8 @@ struct Type2Type
 #define TYPELIST_3(T1, T2, T3) tl::Typelist<T1, TYPELIST_2(T2, T3)>
 #define TYPELIST_4(T1, T2, T3, T4) tl::Typelist<T1, TYPELIST_3(T2, T3, T4)>
 
+
+// 计算typelist的长度
 template<class TList> struct Length;
 
 template<> 
@@ -56,6 +60,8 @@ struct Length<tl::TypeList<T, U>>
 	};
 };
 
+
+// 索引式访问 ??
 template<class TList, unsigned int index> struct TypeAt;
 
 template<class Head, class Tail>
@@ -71,6 +77,7 @@ struct TypeAt<tl::TypeList<Head, Tail>, i>
 };
 
 
+// 查找typelist
 template<class TList, class T> struct IndexOf;
 
 template<class T>
@@ -111,7 +118,6 @@ struct Append<NullType, NullType>
 {
 	typedef NullType Result;
 };
-
 
 template<class T>
 struct Append<NullType, T>

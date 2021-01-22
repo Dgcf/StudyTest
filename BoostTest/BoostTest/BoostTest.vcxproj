@@ -144,10 +144,12 @@
     <ClCompile Include="BoostTest.cpp" />
     <ClCompile Include="COpeConfig.cpp" />
     <ClCompile Include="MemPool.cpp" />
+    <ClCompile Include="pattern.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="COpeConfig.h" />
     <ClInclude Include="MemPool.h" />
+    <ClInclude Include="pattern.h" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="switch_config.xml" />

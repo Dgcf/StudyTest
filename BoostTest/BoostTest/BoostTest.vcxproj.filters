@@ -27,12 +27,18 @@
     <ClCompile Include="MemPool.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="pattern.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="COpeConfig.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="MemPool.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pattern.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
