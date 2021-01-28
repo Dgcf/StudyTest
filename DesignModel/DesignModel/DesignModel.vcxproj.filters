@@ -68,5 +68,8 @@
     <ClInclude Include="typelist.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="typetraits.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

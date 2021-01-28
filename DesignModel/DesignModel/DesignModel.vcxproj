@@ -152,6 +152,7 @@
     <ClInclude Include="ForTest.h" />
     <ClInclude Include="Singletons.h" />
     <ClInclude Include="typelist.h" />
+    <ClInclude Include="typetraits.h" />
     <ClInclude Include="visitable.h" />
     <ClInclude Include="visitor.h" />
   </ItemGroup>
