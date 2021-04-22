@@ -77,8 +77,11 @@ void test_static_var()
 	cout << g_ciTest0 << endl;
 }
 
+
+
 void test_pragmapack_0()
 {
-	cout << "sizeof(STR1): " << sizeof(STR1) << "; alignof(STR1): " << alignof(STR1) << endl;
-	cout << "sizeof(STR2): " << sizeof(STR2) << "; alignof(STR2): " << alignof(STR2) << endl;
+	//cout << "sizeof(STR1): " << sizeof(STR1) << "; alignof(STR1): " << alignof(STR1) << endl;
+	//cout << "sizeof(STR2): " << sizeof(STR2) << "; alignof(STR2): " << alignof(STR2) << endl;
+	//simulate();
 }

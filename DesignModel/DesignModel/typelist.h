@@ -1,5 +1,5 @@
 #pragma once
-
+#include "common.h"
 
 class NullType;
 struct EmptyType {};
@@ -19,6 +19,9 @@ struct Type2Type
 {
 	typedef T OriginalType;
 };
+
+template<const char* s>
+struct Str2Type {};
 
 // 只为了携带型别信息
 template<typename T, typename U>
@@ -221,5 +224,13 @@ namespace tl
 
 	};
 }
+
+template<class T>
+struct Holder
+{
+	T value_;
+};
+
+typedef tl::GenScatterHierarchy<TYPELIST_3(int, string, Widget), Holder> WidgetInfo;
 
 
