@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{c55e813b-06e6-4d1f-b84a-f26303386709}</ProjectGuid>
-    <RootNamespace>DesignModel</RootNamespace>
+    <ProjectGuid>{9e8736e0-e662-4b81-9e52-32ec8c30538d}</ProjectGuid>
+    <RootNamespace>IOStream</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -86,7 +86,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -139,23 +139,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DesignModel.cpp" />
-    <ClCompile Include="factory.cpp" />
-    <ClCompile Include="ForTest.cpp" />
-    <ClCompile Include="Singletons.cpp" />
-    <ClCompile Include="visitable.cpp" />
-    <ClCompile Include="visitor.cpp" />
+    <ClCompile Include="BaseIO.cpp" />
+    <ClCompile Include="ContectTest.cpp" />
+    <ClCompile Include="FlagsTest.cpp" />
+    <ClCompile Include="FstreamTest.cpp" />
+    <ClCompile Include="IOStream.cpp" />
+    <ClCompile Include="StrstreamTest.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BaseIO.h" />
     <ClInclude Include="common.h" />
-    <ClInclude Include="factory.h" />
-    <ClInclude Include="ForTest.h" />
-    <ClInclude Include="policy.h" />
-    <ClInclude Include="Singletons.h" />
-    <ClInclude Include="typelist.h" />
-    <ClInclude Include="typetraits.h" />
-    <ClInclude Include="visitable.h" />
-    <ClInclude Include="visitor.h" />
+    <ClInclude Include="ContectTest.h" />
+    <ClInclude Include="FlagsTest.h" />
+    <ClInclude Include="FstreamTest.h" />
+    <ClInclude Include="StrstreamTest.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

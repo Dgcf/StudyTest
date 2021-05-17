@@ -1,6 +1,0 @@
-﻿  IteratorOne.cpp
-F:\study\code\C++\test\IteratorTest\IteratorTest\IteratorOne.cpp(43,13): warning C4101: “vl”: 未引用的局部变量
-  IteratorTest.cpp
-  正在生成代码...
-IteratorTest.obj : error LNK2001: 无法解析的外部符号 "private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > ABC::s1" (?s1@ABC@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A)
-F:\study\code\C++\test\IteratorTest\Debug\IteratorTest.exe : fatal error LNK1120: 1 个无法解析的外部命令

@@ -10,6 +10,7 @@ int main()
     test_lambda_1();
     test_lambda_2();
     test_lambda_3();
+    
     std::cout << "Hello World!\n";
 }
 

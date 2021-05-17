@@ -15,51 +15,72 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DesignModel.cpp">
+    <ClCompile Include="DataStruct.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Singletons.cpp">
+    <ClCompile Include="Unorder.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="ForTest.cpp">
+    <ClCompile Include="SetMapTest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="visitable.cpp">
+    <ClCompile Include="SearchTest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="visitor.cpp">
+    <ClCompile Include="TreeTest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="factory.cpp">
+    <ClCompile Include="CSort.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CList.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CVector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CStr.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CTree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CSearch.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Singletons.h">
+    <ClInclude Include="Unorder.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="ForTest.h">
+    <ClInclude Include="SetMapTest.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="common.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="typelist.h">
+    <ClInclude Include="SearchTest.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="typetraits.h">
+    <ClInclude Include="TreeTest.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="factory.h">
+    <ClInclude Include="CSort.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="visitable.h">
+    <ClInclude Include="CList.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="visitor.h">
+    <ClInclude Include="CVector.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="policy.h">
+    <ClInclude Include="CStr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CTree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CSearch.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

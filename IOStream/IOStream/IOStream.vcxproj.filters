@@ -3,7 +3,7 @@
   <ItemGroup>
     <Filter Include="源文件">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
     <Filter Include="头文件">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
@@ -15,51 +15,42 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DesignModel.cpp">
+    <ClCompile Include="IOStream.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Singletons.cpp">
+    <ClCompile Include="FstreamTest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="ForTest.cpp">
+    <ClCompile Include="FlagsTest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="visitable.cpp">
+    <ClCompile Include="ContectTest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="visitor.cpp">
+    <ClCompile Include="StrstreamTest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="factory.cpp">
+    <ClCompile Include="BaseIO.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Singletons.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="ForTest.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="common.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="typelist.h">
+    <ClInclude Include="FstreamTest.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="typetraits.h">
+    <ClInclude Include="FlagsTest.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="factory.h">
+    <ClInclude Include="ContectTest.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="visitable.h">
+    <ClInclude Include="StrstreamTest.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="visitor.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="policy.h">
+    <ClInclude Include="BaseIO.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

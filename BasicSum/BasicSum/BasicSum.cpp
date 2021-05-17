@@ -163,17 +163,9 @@ void t4()
 
 int main()
 {
-	/*const char* item_name[] = {
-		"msgtype", "business_date", "business_time", "quote_mark", "batch_no",
-		"entrust_no", "cancel_entrust_no", "report_no", "account_code", "combi_no" };
-
-	for (size_t i = 0; i < sizeof(item_name)/sizeof(*item_name); i++)
-	{
-		cout << *(item_name + i) << endl;
-		cout << strlen(*(item_name + i)) << endl;
-	}*/
-	t4();
-	system("pause");
+	char a = '1', b = '2';
+	printf("%c", b++);
+	printf("%d", b - a);
     return 0;
 }
 

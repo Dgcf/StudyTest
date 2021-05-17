@@ -6,15 +6,6 @@
 #include "ForTest.h"
 #include "factory.h"
 
-class Widget{};
-
-template<class T>
-struct Holder
-{
-    T value_;
-};
-
-
 
 int main()
 {
@@ -23,6 +14,7 @@ int main()
     //cout << tl::IndexOf< TYPELIST_4(int, char, double, string), double>::value << endl;
     //typedef GenScatterHierarchy<TypeList<int, TypeList<string, TypeList<Widget, NullType>>>, Holder> WidgetInfo;
     //typedef GenScatterHierarchy<TYPELIST_3(int, string, Widget), Holder> WidgetInfo;
-    AbstractEnemyFactory f;
+    //AbstractEnemyFactory f;
+    test_policy1();
 }
 

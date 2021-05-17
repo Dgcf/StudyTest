@@ -231,6 +231,6 @@ struct Holder
 	T value_;
 };
 
-typedef tl::GenScatterHierarchy<TYPELIST_3(int, string, Widget), Holder> WidgetInfo;
+//typedef tl::GenScatterHierarchy<TYPELIST_3(int, string, Widget), Holder> WidgetInfo;
 
 
