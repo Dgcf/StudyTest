@@ -65,5 +65,8 @@
     <ClInclude Include="SmartPtr.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="TypeInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

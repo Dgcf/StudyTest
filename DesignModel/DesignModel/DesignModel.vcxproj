@@ -153,6 +153,7 @@
     <ClInclude Include="policy.h" />
     <ClInclude Include="Singletons.h" />
     <ClInclude Include="SmartPtr.h" />
+    <ClInclude Include="TypeInfo.h" />
     <ClInclude Include="typelist.h" />
     <ClInclude Include="typetraits.h" />
     <ClInclude Include="visitable.h" />
