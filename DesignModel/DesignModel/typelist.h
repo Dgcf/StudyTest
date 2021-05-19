@@ -20,8 +20,6 @@ struct Type2Type
 	typedef T OriginalType;
 };
 
-template<const char* s>
-struct Str2Type {};
 
 // 只为了携带型别信息
 template<typename T, typename U>
@@ -40,23 +38,21 @@ struct TypeList
 
 namespace tl
 {
-	
-
 	// 计算typelist的长度
-	template<class TList> struct Length;
+	template<class TList> struct TL_Length;
 
 	template<>
-	struct Length<NullType>
+	struct TL_Length<NullType>
 	{
 		enum { value = 0 };
 	};
 
 	template<class T, class U>
-	struct Length<TypeList<T, U>>
+	struct TL_Length<TypeList<T, U>>
 	{
 		enum
 		{
-			value = 1 + Length<U>::value
+			value = 1 + TL_Length<U>::value
 		};
 	};
 

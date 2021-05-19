@@ -35,7 +35,7 @@ int binary_search(int* t, int len, int key)
 
 int main()
 {
-	SearchTest11();
+	TestCstr();
     system("pause");
 
 }

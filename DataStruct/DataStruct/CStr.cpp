@@ -97,7 +97,7 @@ void TestNext()
 void TestCstr()
 {
 	CStr ct;
-	int index = ct.Index_KMP("aaaaaaax", "aax");
+	int index = ct.get_substr("aaaaaaax", "aax");
 	cout << "index is: " << index << endl;
 
 	//TestNext();

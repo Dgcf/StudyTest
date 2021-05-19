@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{861ddd6d-a857-4529-80ad-ef8d307cd55b}</ProjectGuid>
-    <RootNamespace>BasicSum</RootNamespace>
+    <ProjectGuid>{3b0ec3d2-e091-47be-a3c7-5aae3bdbbe2d}</ProjectGuid>
+    <RootNamespace>CTest</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,17 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BasicSum.cpp" />
-    <ClCompile Include="MacroTest.cpp" />
-    <ClCompile Include="MyTest1.cpp" />
-    <ClCompile Include="Test.cpp" />
+    <ClCompile Include="C++Test.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="common.h" />
-    <ClInclude Include="MacroTest.h" />
-    <ClInclude Include="MyTest1.h" />
-    <ClInclude Include="span.hpp" />
-    <ClInclude Include="Test.h" />
+    <ClInclude Include="test.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

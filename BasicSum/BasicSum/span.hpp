@@ -1,9 +1,4 @@
-/*
- * span.hpp
- *
- *  Created on: 2021年3月10日
- *      Author: dengkai17334
- */
+
 
 #ifndef TRUNK_PUBLIC_SOURCES_UST_API_INCLUDE_COMMON_SPAN_HPP_
 #define TRUNK_PUBLIC_SOURCES_UST_API_INCLUDE_COMMON_SPAN_HPP_
@@ -13,8 +8,6 @@
 #include <type_traits>
 #include <vector>
 
-namespace AMUST
-{
 
 /** A range of bytes expressed as a ContiguousContainer
 
@@ -280,7 +273,6 @@ template<class T>
 typename multi_span<T>::const_iterator end(const multi_span<T> *s)
 {
 	return s->end();
-}
 }
 
 #endif /* TRUNK_PUBLIC_SOURCES_UST_API_INCLUDE_COMMON_SPAN_HPP_ */

@@ -15,6 +15,7 @@ int main()
     //typedef GenScatterHierarchy<TypeList<int, TypeList<string, TypeList<Widget, NullType>>>, Holder> WidgetInfo;
     //typedef GenScatterHierarchy<TYPELIST_3(int, string, Widget), Holder> WidgetInfo;
     //AbstractEnemyFactory f;
-    test_policy1();
+    test_typelist();
+    //system("pause");
 }
 
