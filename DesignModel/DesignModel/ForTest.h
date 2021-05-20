@@ -12,3 +12,4 @@ void test_policy1();
 
 void test_typelist();
 
+void test_GenScatterHierarchy();

@@ -155,6 +155,14 @@ namespace tl
 		typedef TypeList<Head, typename Erase<Tail, T>::Result> Result;
 	};
 
+/***************************************************************************************************
+移除元素的步骤，以tl::Append<TYPELIST_4(int, float, double, char), string>::Result为例：
+1.tl::Erase<TypeList<int, TypeList<float, TypeList<double, NullType>>>, float>::Result
+  Result为TypeList<int, typename Erase<TypeList<float, TypeList<double, NullType>>,float>::Result>
+2.递归上一步的Erase：Erase<TypeList<float, TypeList<double, NullType>>,float>::Result
+  Result为TypeList<double, NullType>
+***************************************************************************************************/
+
 
 	// 移除重复元素
 	template<class TList> struct NoDuplicates;
@@ -173,6 +181,24 @@ namespace tl
 	public:
 		typedef TypeList<Head, L2> Result;
 	};
+
+/**************************************************************************************************
+移除重复元素步骤，以NoDuplicates<TYPELIST_4(int, float, double, float)>::Result为例
+1.Result:TypeList<int, L2>
+2.L2:Erase<L1, int>::Result;
+3.L2:Erase<NoDuplicates<TypeList<float, TypeList<double, TypeList<float, NullType>>>>::Result, int>::Result
+4.分解NoDuplicates<TypeList<float, TypeList<double, TypeList<float, NullType>>>>::Result
+5.4中的Result为TypeList<float, Erase<NoDuplicates<TypeList<double, TypeList<float, NullType>>>::Result, float>::Result>
+6.分解5中的NoDuplicates<TypeList<double, TypeList<float, NullType>>>::Result
+7.6中的Result为TypeList<double, Erase<NoDuplicates<TypeList<float, NullType>>::Result, double>::Result>
+8.分解7中的NoDuplicates<TypeList<float, NullType>>::Result
+9.8中的Result为TypeList<float, Erase<NoDuplicates<NullType>::Result, float>::Result>
+10.Erase<NoDuplicates<NullType>::Result为：TypeList<float, NullType>
+开始代入：
+9. TypeList<float, TypeList<float, NullType>>
+7. TypeList<double, Erase<TypeList<float, TypeList<float, NullType>>, double>::Result>
+...
+**************************************************************************************************/
 
 	// 取代Typelist中的某个元素
 	template<class TList, class T, class U> struct Replace;
