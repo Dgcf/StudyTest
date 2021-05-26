@@ -156,6 +156,7 @@
     <ClInclude Include="tem.h" />
     <ClInclude Include="TestType.h" />
     <ClInclude Include="typetraits.h" />
+    <ClInclude Include="VariableParameter.h" />
     <ClInclude Include="wkcd.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

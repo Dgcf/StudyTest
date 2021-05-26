@@ -71,5 +71,8 @@
     <ClInclude Include="Command.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Functor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -5,6 +5,7 @@
 #include "Singletons.h"
 #include "ForTest.h"
 #include "factory.h"
+#include "Functor.h"
 
 
 int main()
@@ -15,7 +16,11 @@ int main()
     //typedef GenScatterHierarchy<TypeList<int, TypeList<string, TypeList<Widget, NullType>>>, Holder> WidgetInfo;
     //typedef GenScatterHierarchy<TYPELIST_3(int, string, Widget), Holder> WidgetInfo;
     //AbstractEnemyFactory f;
-    test_typelist();
+    //test_typelist();
     //system("pause");
+    TestFunctor f;
+    Functor<void, TYPELIST_2(int, double)> cmd(TestFunction);
+    cmd(4, 4.5);
+    cout << typeid(TestFunction).name() << endl;
 }
 

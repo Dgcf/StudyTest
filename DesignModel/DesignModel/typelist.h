@@ -72,6 +72,26 @@ namespace tl
 		typedef typename TypeAt<Tail, i - 1>::Result Result;
 	};
 
+	template <class TList, unsigned int index,
+		typename DefaultType = NullType>
+		struct TypeAtNonStrict
+	{
+		typedef DefaultType Result;
+	};
+
+	template <typename Head, typename Tail, typename DefaultType>
+	struct TypeAtNonStrict<TypeList<Head, Tail>, 0, DefaultType>
+	{
+		typedef Head Result;
+	};
+
+	template <class Head, class Tail, unsigned int i, typename DefaultType>
+	struct TypeAtNonStrict<TypeList<Head, Tail>, i, DefaultType>
+	{
+		typedef typename
+			TypeAtNonStrict<Tail, i - 1, DefaultType>::Result Result;
+	};
+
 
 	// ≤È’“typelist
 	template<class TList, class T> struct IndexOf;

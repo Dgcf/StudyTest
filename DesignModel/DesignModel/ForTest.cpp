@@ -27,8 +27,18 @@ template<typename>
 class T1 {};
 void test_GenScatterHierarchy()
 {
-	tl::GenScatterHierarchy<int, T1> t1;
-	tl::GenScatterHierarchy<TYPELIST_4(int, float, double, char), T1> t2;
+	//tl::GenScatterHierarchy<int, T1> t1;
+	//tl::GenScatterHierarchy<TYPELIST_4(int, float, double, char), T1> t2;
+}
+
+void TestFunction(int i, double d)
+{
+	cout << "TestFunction(" << i << ", " << d << ") called." << endl;
+}
+
+void TestFunctorHandle()
+{
+
 }
 
 

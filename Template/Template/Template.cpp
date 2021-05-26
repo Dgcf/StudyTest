@@ -26,6 +26,7 @@ struct EmptyStruct
 };
 
 
+
 int main()
 {
     //cout << sizeof(EmptyStruct) << endl;
