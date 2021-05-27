@@ -1,57 +1,6 @@
 #pragma once
 
-
-#include "typelist.h"
-
-
-template<typename T>
-class AFUint
-{
-public:
-	virtual T* DoCreate(Type2Type<T>) { return nullptr; }
-	virtual ~AFUint() {}
-};
-
-
-template<class TList, template<typename> class Unit=AFUint>
-class AbstractFactory : public tl::GenScatterHierarchy<TList, Unit>
-{
-public:
-	typedef TList ProductList;
-	template<class T> T* Create()
-	{
-		Unit<T>& unit = *this;
-		return unit.DoCreate(Type2Type<T>());
-	}
-};
-
-class Solider {
-public:
-	void PrintSolider()
-	{
-		cout << "PrintSolider" << endl;
-	}
-};
-
-class Monster {
-public:
-	void PrintMonster()
-	{
-		cout << "PrintMonster" << endl;
-	}
-};
-
-class SuperMonster {
-public:
-	void PrintSuperMonster()
-	{
-		cout << "PrintSuperMonster" << endl;
-	}
-};
-
-typedef AbstractFactory<
-	TYPELIST_3(Solider, Monster, SuperMonster)
-> AbstractEnemyFactory;
+#include "TypeInfo.h"
 
 
 class Shape
@@ -60,47 +9,22 @@ public:
 	virtual void Draw() const = 0;
 	virtual void Rotate(double angle) = 0;
 	virtual void Zoom(double zoomFactor) = 0;
+	virtual Shape* Clone() const = 0;
+};
+
+class Line
+{
+public:
+	virtual Line* Clone() const
+	{
+		return new Line(*this);
+	}
 };
 
 class Drawing
 {
 
 };
-
-template
-<
-	typename AbstractProduct,
-	typename IdentifierType,
-	typename ProductCreator
->
-class Factory
-{
-public:
-	bool Register(const IdentifierType& id, ProductCreator creator)
-	{
-		return associations_.insert(AssocMap::vlaue_type(id, creator)).second;
-	}
-
-	bool UnRegister(const IdentifierType& id)
-	{
-		return associations_.erase(id) == 1;
-	}
-
-	AbstractProduct* CreateObject(const IdentifierType& id)
-	{
-		typename AssocMap::const_iterator it = associations_.find(id);
-		if (it == associations_.end())
-		{
-			throw runtime_error("")
-		}
-		return (it->second)();
-	}
-
-private:
-	typedef std::map<IdentifierType, AbstractProduct> AssocMap;
-	AssocMap associations_;
-};
-
 
 class ShapeFactory
 {
@@ -133,6 +57,95 @@ public:
 
 private:
 	CallbackMap callbacks_;
+};
+
+
+template<typename IdentifierType, typename ProductType>
+class DefaultFactoryError
+{
+public:
+	class Exception : public std::exception
+	{
+	public:
+		Exception(const IdentifierType& unknownId)
+			: unknownId_(unknownId)
+		{
+		}
+
+		virtual const char* what()
+		{
+			return "Unknown object type pass to factory.";
+		}
+
+		const IdentifierType GetId()
+		{
+			return unknownId_;
+		}
+
+	private:
+		IdentifierType unknownId_;
+	};
+
+protected:
+	/*StaticProductType* OnUnknownType(const IdentifierType& id)
+	{
+		throw Exception(id);
+	}*/
+};
+
+
+template
+<
+	typename AbstractProduct,
+	typename IdentifierType,
+	typename ProductCreator=AbstractProduct* (*)(),  // ProductCreator是AbstractProduct的子类型
+	template<typename, class> class FactoryErrorPolicy=DefaultFactoryError
+>
+class Factory: public FactoryErrorPolicy<IdentifierType, AbstractProduct>
+{
+public:
+	bool Register(const IdentifierType& id, ProductCreator creator)
+	{
+		return associations_.insert(AssocMap::vlaue_type(id, creator)).second;
+	}
+
+	bool UnRegister(const IdentifierType& id)
+	{
+		return associations_.erase(id) == 1;
+	}
+
+	AbstractProduct* CreateObject(const IdentifierType& id)
+	{
+		typename AssocMap::const_iterator it = associations_.find(id);
+		if (it == associations_.end())
+		{
+			//return OnUnknownType(id);
+			return nullptr;
+		}
+		return (it->second)();
+	}
+
+private:
+	typedef std::map<IdentifierType, AbstractProduct> AssocMap;
+	AssocMap associations_;
+};
+
+
+template
+<
+	typename AbstractProduct,
+	typename ProductCreator = AbstractProduct * (*)(AbstractProduct*),
+	template<typename, typename> class FactoryErrorPolicy = DefaultFactoryError
+>
+class CloneFactory
+{
+public:
+	AbstractProduct* CreateObject(const AbstractProduct* model);
+	bool Register(const TypeInfo&, ProductCreator creator);
+	bool UnRegister(const TypeInfo&);
+
+private:
+	//typedef 
 };
 
 

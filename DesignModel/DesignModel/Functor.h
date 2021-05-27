@@ -127,7 +127,7 @@ private:
 template<typename R, class TList>
 template<typename Func>
 inline Functor<R, TList>::Functor(const Func& fun)
-	: spImpl_(new FunctorHandler<Functor, Func>(fun))  
+	/*  : spImpl_(new FunctorHandler<Functor, Func>(fun))  */
 {
 }
 
@@ -157,15 +157,18 @@ public:
 
 	ResultType operator()(typename ParentFunctor::Parm1 p1)
 	{
-		return (*pObj_).*pMemFn_)(p1);
+		return ((*pObj_).*pMemFn_)(p1);
 	}
 
 	ResultType operator()(typename ParentFunctor::Parm1 p1, typename ParentFunctor::Parm2 p2)
 	{
-		return (*pObj_).*pMemFn_)(p1, p2);
+		return ((*pObj_).*pMemFn_)(p1, p2);
 	}
 
 private:
 	PointerToObj pObj_;
 	PointerToMemFn pMemFn_;
 };
+
+
+

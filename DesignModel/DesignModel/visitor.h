@@ -7,7 +7,6 @@ class BaseVisitor
 public:
 	virtual ~BaseVisitor()
 	{
-
 	}
 };
 

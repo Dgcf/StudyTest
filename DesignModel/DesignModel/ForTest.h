@@ -4,6 +4,8 @@
 #include "policy.h"
 #include "typelist.h"
 #include "Functor.h"
+#include "visitable.h"
+#include "visitor.h"
 
 static int glo = Singletons2::Instance()->test();
 
@@ -26,3 +28,7 @@ struct TestFunctor
 void TestFunction(int i, double d);
 
 void TestFunctorHandle();
+
+void test_abstractenemyfactory();
+
+void test_visitor();

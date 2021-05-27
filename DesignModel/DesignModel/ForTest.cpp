@@ -25,6 +25,7 @@ void test_typelist()
 
 template<typename>
 class T1 {};
+
 void test_GenScatterHierarchy()
 {
 	//tl::GenScatterHierarchy<int, T1> t1;
@@ -39,6 +40,19 @@ void TestFunction(int i, double d)
 void TestFunctorHandle()
 {
 
+}
+
+void test_abstractenemyfactory()
+{
+	//AbstractEnemyFactory* p
+}
+
+void test_visitor()
+{
+	MyConcreteVisitor visitor;
+	Paragraph par;
+	DocElement* d = &par;
+	d->Accept(visitor);
 }
 
 

@@ -18,9 +18,12 @@ int main()
     //AbstractEnemyFactory f;
     //test_typelist();
     //system("pause");
-    TestFunctor f;
+
+    /*TestFunctor f;
     Functor<void, TYPELIST_2(int, double)> cmd(TestFunction);
     cmd(4, 4.5);
-    cout << typeid(TestFunction).name() << endl;
+    cout << typeid(TestFunction).name() << endl;*/
+
+    test_visitor();
 }
 

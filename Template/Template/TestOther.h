@@ -14,6 +14,7 @@ public:
 		t_(t)
 	{}
 
+	
 private:
 	T t_;
 };
