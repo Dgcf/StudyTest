@@ -36,6 +36,9 @@
     <ClCompile Include="question.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="TestOther.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tem.h">
@@ -66,6 +69,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="VariableParameter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TestOther.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

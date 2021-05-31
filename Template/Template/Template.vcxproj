@@ -143,6 +143,7 @@
     <ClCompile Include="FuncTemp.cpp" />
     <ClCompile Include="question.cpp" />
     <ClCompile Include="Template.cpp" />
+    <ClCompile Include="TestOther.cpp" />
     <ClCompile Include="TestType.cpp" />
     <ClCompile Include="typetraits.cpp" />
     <ClCompile Include="wkcd.cpp" />
@@ -154,6 +155,7 @@
     <ClInclude Include="question.h" />
     <ClInclude Include="returntype.h" />
     <ClInclude Include="tem.h" />
+    <ClInclude Include="TestOther.h" />
     <ClInclude Include="TestType.h" />
     <ClInclude Include="typetraits.h" />
     <ClInclude Include="VariableParameter.h" />

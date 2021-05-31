@@ -28,8 +28,13 @@ class T1 {};
 
 void test_GenScatterHierarchy()
 {
-	//tl::GenScatterHierarchy<int, T1> t1;
-	//tl::GenScatterHierarchy<TYPELIST_4(int, float, double, char), T1> t2;
+	typedef tl::GenScatterHierarchy<TYPELIST_3(int, string, Widget), Holder> WidgetInfo;
+	tl::GenScatterHierarchy<TypeList<int, TypeList<string, TypeList<double, NullType>>>, Holder> obj;
+	Holder<string> h = static_cast<Holder<string>>(obj);
+	
+	//string n = Field(obj);
+	tl::GenScatterHierarchy<TypeList<int, TypeList<string, NullType>>, Holder> w;
+	Holder<int> h1 = static_cast<Holder<int>>(w);
 }
 
 void TestFunction(int i, double d)

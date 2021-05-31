@@ -247,7 +247,7 @@ namespace tl
 	class GenScatterHierarchy;
 
 	template<class T1, class T2, template<typename> class Unit>
-	class GenScatterHierarchy<TYPELIST_2(T1, T2), Unit>
+	class GenScatterHierarchy<TypeList<T1, TypeList<T2, NullType>>, Unit>
 		: public GenScatterHierarchy<T1, Unit>
 		, public GenScatterHierarchy<T2, Unit>
 	{
@@ -257,13 +257,11 @@ namespace tl
 	template<class AtomicType, template<class> class Unit>
 	class GenScatterHierarchy : public Unit<AtomicType>
 	{
-
 	};
 
-	template<template<class>class Unit>
+	template<template<typename> class Unit>
 	class GenScatterHierarchy<NullType, Unit>
 	{
-
 	};
 }
 
@@ -273,6 +271,12 @@ struct Holder
 	T value_;
 };
 
-//typedef tl::GenScatterHierarchy<TYPELIST_3(int, string, Widget), Holder> WidgetInfo;
+
+class Widget{};
 
 
+template<typename T, typename TList, template<typename> class Unit>
+Unit<T>& Field(tl::GenScatterHierarchy<TList, Unit>& obj)
+{
+	return obj;
+}

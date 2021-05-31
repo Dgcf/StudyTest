@@ -153,6 +153,7 @@
     <ClInclude Include="factory.h" />
     <ClInclude Include="ForTest.h" />
     <ClInclude Include="Functor.h" />
+    <ClInclude Include="Multimethods.h" />
     <ClInclude Include="policy.h" />
     <ClInclude Include="Singletons.h" />
     <ClInclude Include="SmartPtr.h" />

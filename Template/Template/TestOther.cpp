@@ -6,5 +6,5 @@ void TestFunction()
 
 void test_other()
 {
-	TestOther(TestFunction);
+	TestOther<>(TestFunction);
 }

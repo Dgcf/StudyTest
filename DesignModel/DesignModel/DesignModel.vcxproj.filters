@@ -77,5 +77,8 @@
     <ClInclude Include="AbstractFactory.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Multimethods.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
