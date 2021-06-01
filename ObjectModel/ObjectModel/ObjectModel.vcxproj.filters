@@ -36,6 +36,9 @@
     <ClCompile Include="PureVirClass.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ForTest.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Model.h">
@@ -57,6 +60,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="PureVirClass.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Derived.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ForTest.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

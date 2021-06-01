@@ -29,8 +29,9 @@ class T1 {};
 void test_GenScatterHierarchy()
 {
 	typedef tl::GenScatterHierarchy<TYPELIST_3(int, string, Widget), Holder> WidgetInfo;
-	tl::GenScatterHierarchy<TypeList<int, TypeList<string, TypeList<double, NullType>>>, Holder> obj;
-	Holder<string> h = static_cast<Holder<string>>(obj);
+	WidgetInfo obj;
+	//tl::GenScatterHierarchy<TypeList<int, TypeList<TypeList<string,double>, NullType>>, Holder> obj;
+	Holder<int> h = static_cast<Holder<int>>(obj);
 	
 	//string n = Field(obj);
 	tl::GenScatterHierarchy<TypeList<int, TypeList<string, NullType>>, Holder> w;

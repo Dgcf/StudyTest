@@ -142,6 +142,7 @@
     <ClCompile Include="DesignModel.cpp" />
     <ClCompile Include="factory.cpp" />
     <ClCompile Include="ForTest.cpp" />
+    <ClCompile Include="MemAlloc.cpp" />
     <ClCompile Include="Singletons.cpp" />
     <ClCompile Include="visitable.cpp" />
     <ClCompile Include="visitor.cpp" />
@@ -153,6 +154,7 @@
     <ClInclude Include="factory.h" />
     <ClInclude Include="ForTest.h" />
     <ClInclude Include="Functor.h" />
+    <ClInclude Include="MemAlloc.h" />
     <ClInclude Include="Multimethods.h" />
     <ClInclude Include="policy.h" />
     <ClInclude Include="Singletons.h" />

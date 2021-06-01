@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="CopySemantic.cpp" />
     <ClCompile Include="DataSeman.cpp" />
+    <ClCompile Include="ForTest.cpp" />
     <ClCompile Include="FuncSemantic.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="MoveTest.cpp" />
@@ -151,6 +152,8 @@
     <ClInclude Include="common.h" />
     <ClInclude Include="CopySemantic.h" />
     <ClInclude Include="DataSeman.h" />
+    <ClInclude Include="Derived.h" />
+    <ClInclude Include="ForTest.h" />
     <ClInclude Include="FuncSemantic.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="MoveTest.h" />
