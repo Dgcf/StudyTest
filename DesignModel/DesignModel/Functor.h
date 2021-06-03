@@ -82,39 +82,35 @@ public:
 public:
 	Functor()
 	{
-
 	}
 
 	Functor(const Functor&)
 	{
-
 	}
 
 	Functor& operator=(const Functor&)
 	{
-
 	}
 
 	explicit Functor(std::unique_ptr<Impl> spImpl)
 	{
-
 	}
 
 	template<typename Func>
 	Functor(const Func& func);  // 以仿函数Func之对象为参数的Functor构造函数
 	
 
-	R operator()()
+	ResultType operator()()
 	{
 		return (*spImpl_)();
 	}
 
-	R operator()(Parm1 p1)
+	ResultType operator()(Parm1 p1)
 	{
 		return (*spImpl_)(p1);
 	}
 
-	R operator()(Parm1 p1, Parm2 p2)
+	ResultType operator()(Parm1 p1, Parm2 p2)
 	{
 		return (*spImpl_)(p1, p2);
 	}
