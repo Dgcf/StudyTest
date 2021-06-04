@@ -7,7 +7,7 @@
 #include "visitable.h"
 #include "visitor.h"
 
-static int glo = Singletons2::Instance()->test();
+// static int glo = Singletons2::Instance()->test();
 
 void print_var();
 
@@ -27,7 +27,11 @@ struct TestFunctor
 
 void TestFunction(int i, double d);
 
+typedef void(MY_FUNC)(int, double);
+
 void TestFunctorHandle();
+
+void test_functor();
 
 void test_abstractenemyfactory();
 

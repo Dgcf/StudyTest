@@ -4,3 +4,5 @@
 
 void test_Derived();
 
+void test_memptr();
+

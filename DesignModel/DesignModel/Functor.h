@@ -69,64 +69,6 @@ private:
 };
 
 
-template<typename R, class TList>
-class Functor
-{
-public:
-	typedef TList ParmList;
-	typedef R ResultType;
-	typedef FunctorImpl<R, TList> Impl;
-	typedef typename tl::TypeAtNonStrict<TList, 0, EmptyType>::Result Parm1;
-	typedef typename tl::TypeAtNonStrict<TList, 1, EmptyType>::Result Parm2;
-
-public:
-	Functor()
-	{
-	}
-
-	Functor(const Functor&)
-	{
-	}
-
-	Functor& operator=(const Functor&)
-	{
-	}
-
-	explicit Functor(std::unique_ptr<Impl> spImpl)
-	{
-	}
-
-	template<typename Func>
-	Functor(const Func& func);  // 以仿函数Func之对象为参数的Functor构造函数
-	
-
-	ResultType operator()()
-	{
-		return (*spImpl_)();
-	}
-
-	ResultType operator()(Parm1 p1)
-	{
-		return (*spImpl_)(p1);
-	}
-
-	ResultType operator()(Parm1 p1, Parm2 p2)
-	{
-		return (*spImpl_)(p1, p2);
-	}
-
-private:
-	
-	std::unique_ptr<Impl> spImpl_;
-};
-
-template<typename R, class TList>
-template<typename Func>
-inline Functor<R, TList>::Functor(const Func& fun)
-	/*  : spImpl_(new FunctorHandler<Functor, Func>(fun))  */
-{
-}
-
 template<typename ParentFunctor, typename PointerToObj, typename PointerToMemFn>
 class MemFunHandler : public FunctorImpl
 	<
@@ -167,4 +109,67 @@ private:
 };
 
 
+template<typename R, class TList>
+class Functor
+{
+public:
+	typedef TList ParmList;
+	typedef R ResultType;
+	typedef FunctorImpl<R, TList> Impl;
+	typedef typename tl::TypeAtNonStrict<TList, 0, EmptyType>::Result Parm1;
+	typedef typename tl::TypeAtNonStrict<TList, 1, EmptyType>::Result Parm2;
 
+public:
+	Functor()
+	{
+	}
+
+	Functor(const Functor&)
+	{
+	}
+
+	Functor& operator=(const Functor&)
+	{
+	}
+
+	explicit Functor(std::unique_ptr<Impl> spImpl)
+	{
+	}
+
+	template<typename Func>
+	Functor(const Func& func);  // 以仿函数Func之对象为参数的Functor构造函数,好像不支持函数指针
+	
+
+	ResultType operator()()
+	{
+		return (*spImpl_)();
+	}
+
+	ResultType operator()(Parm1 p1)
+	{
+		return (*spImpl_)(p1);
+	}
+
+	ResultType operator()(Parm1 p1, Parm2 p2)
+	{
+		return (*spImpl_)(p1, p2);
+	}
+
+	/*template<typename ...Args>
+	ResultType operator()(Args... args)
+	{
+		ResultType tmp;
+		return tmp;
+	}*/
+
+private:
+	
+	std::unique_ptr<Impl> spImpl_;
+};
+
+template<typename R, class TList>
+template<typename Func>
+inline Functor<R, TList>::Functor(const Func& fun)
+	: spImpl_(new FunctorHandler<Functor, Func>(fun))  
+{
+}

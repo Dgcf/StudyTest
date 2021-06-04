@@ -2,7 +2,7 @@
 
 void print_var()
 {
-	cout << "glo: " << glo << endl;
+	// cout << "glo: " << glo << endl;
 }
 
 typedef WidgetManager<OptNewCreator> MyWidgetManager;
@@ -31,7 +31,7 @@ void test_GenScatterHierarchy()
 	typedef tl::GenScatterHierarchy<TYPELIST_3(int, string, Widget), Holder> WidgetInfo;
 	WidgetInfo obj;
 	//tl::GenScatterHierarchy<TypeList<int, TypeList<TypeList<string,double>, NullType>>, Holder> obj;
-	Holder<int> h = static_cast<Holder<int>>(obj);
+	//Holder<int> h = static_cast<Holder<int>>(obj);
 	
 	//string n = Field(obj);
 	tl::GenScatterHierarchy<TypeList<int, TypeList<string, NullType>>, Holder> w;
@@ -46,6 +46,18 @@ void TestFunction(int i, double d)
 void TestFunctorHandle()
 {
 
+}
+
+void test_functor()
+{
+	TestFunctor f;
+	Functor<void, TYPELIST_2(int, double)> cmd(f);
+	cmd(4, 4.5);
+
+	// 这里如果直接把TestFunction传给cmd1编译报错，如果给函数指针类型再传递给cmd1就OK
+	MY_FUNC* f0 = TestFunction;
+	Functor<void, TYPELIST_2(int, double)> cmd1(f0);
+	cmd1(3, 3.5);
 }
 
 void test_abstractenemyfactory()

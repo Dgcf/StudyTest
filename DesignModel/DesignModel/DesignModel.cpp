@@ -19,11 +19,9 @@ int main()
     //test_typelist();
     //system("pause");
 
-    /*TestFunctor f;
-    Functor<void, TYPELIST_2(int, double)> cmd(TestFunction);
-    cmd(4, 4.5);
-    cout << typeid(TestFunction).name() << endl;*/
+    /* 测试 命令模式 */
+    test_functor();
 
-    test_visitor();
+    //test_visitor();
 }
 

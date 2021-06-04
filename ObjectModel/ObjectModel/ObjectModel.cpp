@@ -7,6 +7,7 @@
 #include "DataSeman.h"
 #include "MoveTest.h"
 #include "CopySemantic.h"
+#include "ForTest.h"
 
 std::unique_ptr<int> v()
 {
@@ -28,6 +29,6 @@ void Test_stack()
 
 int main()
 {
-    test222();
+    test_memptr();
 }
 
