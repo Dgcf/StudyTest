@@ -27,6 +27,11 @@ void Test_stack()
     cout << "ssss" << endl;
 }
 
+class NoDefault
+{
+
+};
+
 int main()
 {
     test_memptr();

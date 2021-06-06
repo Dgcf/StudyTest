@@ -38,7 +38,7 @@ void test_GenScatterHierarchy()
 	Holder<int> h1 = static_cast<Holder<int>>(w);
 }
 
-void TestFunction(int i, double d)
+void TestFunction(int& i, double d)
 {
 	cout << "TestFunction(" << i << ", " << d << ") called." << endl;
 }
@@ -50,9 +50,10 @@ void TestFunctorHandle()
 
 void test_functor()
 {
-	TestFunctor f;
-	Functor<void, TYPELIST_2(int, double)> cmd(f);
-	cmd(4, 4.5);
+	/*TestFunctor f;
+	Functor<void, TYPELIST_2(int&, double)> cmd(f);
+	int x = 4;
+	cmd(x, 4.5);*/
 
 	// 这里如果直接把TestFunction传给cmd1编译报错，如果给函数指针类型再传递给cmd1就OK
 	MY_FUNC* f0 = TestFunction;
@@ -71,6 +72,16 @@ void test_visitor()
 	Paragraph par;
 	DocElement* d = &par;
 	d->Accept(visitor);
+}
+
+void test_typetraits()
+{
+	bool iterIsPtr = TypeTraits<vector<int>::iterator>::isPointer;
+	cout << "vector<int>::iterator is " << (iterIsPtr ? "fast" : "smart") << "\n";
+
+	typedef void(TestTypeTraits::* FuncType)();
+	bool isMemPtr = TypeTraits<FuncType>::isMemPtr;
+	cout << "isMemPtr:  " << (isMemPtr ? "is member ptr" : "is not member ptr") << "\n";
 }
 
 

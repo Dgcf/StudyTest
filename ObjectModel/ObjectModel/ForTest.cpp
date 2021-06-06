@@ -16,3 +16,10 @@ void test_memptr()
 	BaseMay bm;
 	(bm.*pAc)();
 }
+
+
+void test_Class()
+{
+	ABC a;
+
+}

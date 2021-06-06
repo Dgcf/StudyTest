@@ -20,8 +20,9 @@ int main()
     //system("pause");
 
     /* 测试 命令模式 */
-    test_functor();
+    //test_functor();
 
     //test_visitor();
+    test_typetraits();
 }
 

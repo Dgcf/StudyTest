@@ -152,7 +152,8 @@ public:
 
 	ResultType operator()(Parm1 p1, Parm2 p2)
 	{
-		return (*spImpl_)(p1, p2);
+		cout << "operator()(Parm1 p1, Parm2 p2)" << endl;
+		return (*spImpl_)(std::forward<Parm1>(p1), std::forward<Parm2>(p2));
 	}
 
 	/*template<typename ...Args>
