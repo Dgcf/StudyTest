@@ -55,7 +55,7 @@ private:
 public:
 	enum { isMemPtr = PToMTraits<T>::result };
 
-
+// »•µÙconst Ù–‘
 private:
 	template<class U>
 	struct UnConst

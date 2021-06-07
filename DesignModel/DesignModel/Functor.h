@@ -49,7 +49,7 @@ public:
 		return new FunctorHandler(*this);  // ?
 	}
 
-	ResultType operator()()
+	/*ResultType operator()()
 	{
 		return fun_();
 	}
@@ -62,6 +62,12 @@ public:
 	ResultType operator()(typename ParentFunctor::Parm1 p1, typename ParentFunctor::Parm2 p2)
 	{
 		return fun_(p1, p2);
+	}*/
+	
+	template<typename ...Args>
+	ResultType operator()(Args... args)
+	{
+		return fun_(std::forward<Args>(args)...);
 	}
 
 private:
@@ -140,7 +146,7 @@ public:
 	Functor(const Func& func);  // 以仿函数Func之对象为参数的Functor构造函数,好像不支持函数指针
 	
 
-	ResultType operator()()
+	/*ResultType operator()()
 	{
 		return (*spImpl_)();
 	}
@@ -154,14 +160,13 @@ public:
 	{
 		cout << "operator()(Parm1 p1, Parm2 p2)" << endl;
 		return (*spImpl_)(std::forward<Parm1>(p1), std::forward<Parm2>(p2));
-	}
+	}*/
 
-	/*template<typename ...Args>
+	template<typename ...Args>
 	ResultType operator()(Args... args)
 	{
-		ResultType tmp;
-		return tmp;
-	}*/
+		return (*spImpl_)(std::forward<Args>(args)...);
+	}
 
 private:
 	

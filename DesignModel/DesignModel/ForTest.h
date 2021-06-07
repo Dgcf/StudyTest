@@ -29,6 +29,8 @@ struct TestFunctor
 
 void TestFunction(int& i, double d);
 
+
+
 typedef void(MY_FUNC)(int&, double);
 
 void TestFunctorHandle();

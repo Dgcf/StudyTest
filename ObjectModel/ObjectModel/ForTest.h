@@ -6,13 +6,19 @@ void test_Derived();
 
 void test_memptr();
 
-class ABC
+class NoDefault
 {
 public:
-	ABC(int a, char b)
-	{
-		cout << "a: " << a << " b: " << b << endl;
-	}
+    NoDefault(int i) :i_(i)
+    {}
+public:
+    int i_;
+};
+
+class C1
+{
+public:
+    NoDefault nf;
 };
 
 void test_Class();

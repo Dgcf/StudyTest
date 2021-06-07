@@ -29,7 +29,7 @@ class T1 {};
 void test_GenScatterHierarchy()
 {
 	typedef tl::GenScatterHierarchy<TYPELIST_3(int, string, Widget), Holder> WidgetInfo;
-	WidgetInfo obj;
+	//WidgetInfo obj;
 	//tl::GenScatterHierarchy<TypeList<int, TypeList<TypeList<string,double>, NullType>>, Holder> obj;
 	//Holder<int> h = static_cast<Holder<int>>(obj);
 	
@@ -50,15 +50,15 @@ void TestFunctorHandle()
 
 void test_functor()
 {
-	/*TestFunctor f;
+	TestFunctor f;
 	Functor<void, TYPELIST_2(int&, double)> cmd(f);
 	int x = 4;
-	cmd(x, 4.5);*/
+	cmd(x, 4.5);
 
 	// 这里如果直接把TestFunction传给cmd1编译报错，如果给函数指针类型再传递给cmd1就OK
-	MY_FUNC* f0 = TestFunction;
+	/*MY_FUNC* f0 = TestFunction;
 	Functor<void, TYPELIST_2(int, double)> cmd1(f0);
-	cmd1(3, 3.5);
+	cmd1(3, 3.5);*/
 }
 
 void test_abstractenemyfactory()
@@ -81,7 +81,10 @@ void test_typetraits()
 
 	typedef void(TestTypeTraits::* FuncType)();
 	bool isMemPtr = TypeTraits<FuncType>::isMemPtr;
-	cout << "isMemPtr:  " << (isMemPtr ? "is member ptr" : "is not member ptr") << "\n";
+	cout << "FuncType isMemPtr:  " << (isMemPtr ? "is member ptr" : "is not member ptr") << "\n";
+
+	isMemPtr = TypeTraits<int>::isMemPtr;
+	cout << "int isMemPtr:  " << (isMemPtr ? "is member ptr" : "is not member ptr") << "\n";
 }
 
 

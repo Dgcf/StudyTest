@@ -20,6 +20,7 @@ void test_memptr()
 
 void test_Class()
 {
-	ABC a;
-
+	std::vector<C1> vec;
+	C temp;
+	//NoDefault f;
 }
