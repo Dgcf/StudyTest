@@ -2,6 +2,7 @@
 
 #include "typelist.h"
 
+// 为什么需要FunctorImpl?
 template<typename R, typename TList>
 class FunctorImpl;
 
@@ -49,7 +50,7 @@ public:
 		return new FunctorHandler(*this);  // ?
 	}
 
-	/*ResultType operator()()
+	ResultType operator()()
 	{
 		return fun_();
 	}
@@ -62,12 +63,6 @@ public:
 	ResultType operator()(typename ParentFunctor::Parm1 p1, typename ParentFunctor::Parm2 p2)
 	{
 		return fun_(p1, p2);
-	}*/
-	
-	template<typename ...Args>
-	ResultType operator()(Args... args)
-	{
-		return fun_(std::forward<Args>(args)...);
 	}
 
 private:
@@ -144,27 +139,11 @@ public:
 
 	template<typename Func>
 	Functor(const Func& func);  // 以仿函数Func之对象为参数的Functor构造函数,好像不支持函数指针
-	
-
-	/*ResultType operator()()
-	{
-		return (*spImpl_)();
-	}
-
-	ResultType operator()(Parm1 p1)
-	{
-		return (*spImpl_)(p1);
-	}
-
-	ResultType operator()(Parm1 p1, Parm2 p2)
-	{
-		cout << "operator()(Parm1 p1, Parm2 p2)" << endl;
-		return (*spImpl_)(std::forward<Parm1>(p1), std::forward<Parm2>(p2));
-	}*/
 
 	template<typename ...Args>
 	ResultType operator()(Args... args)
 	{
+		cout << "sizeof: " << sizeof...(args) << endl;
 		return (*spImpl_)(std::forward<Args>(args)...);
 	}
 

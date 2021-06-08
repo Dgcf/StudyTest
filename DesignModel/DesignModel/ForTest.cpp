@@ -51,14 +51,14 @@ void TestFunctorHandle()
 void test_functor()
 {
 	TestFunctor f;
-	Functor<void, TYPELIST_2(int&, double)> cmd(f);
+	Functor<void, TYPELIST_2(int, double)> cmd(f);
 	int x = 4;
 	cmd(x, 4.5);
 
 	// 这里如果直接把TestFunction传给cmd1编译报错，如果给函数指针类型再传递给cmd1就OK
-	/*MY_FUNC* f0 = TestFunction;
+	MY_FUNC* f0 = TestFunction;
 	Functor<void, TYPELIST_2(int, double)> cmd1(f0);
-	cmd1(3, 3.5);*/
+	cmd1(3, 3.5);
 }
 
 void test_abstractenemyfactory()

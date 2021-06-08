@@ -24,7 +24,6 @@ struct TestFunctor
 	{
 		cout << "TestFunctor::operator()(" << i << ", " << d << ") called.\n";
 	}
-	vector<int> a;
 };
 
 void TestFunction(int& i, double d);
