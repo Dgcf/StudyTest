@@ -32,21 +32,28 @@ struct EnsureNotNull
 	}
 };
 
-
-template
-<
-	typename T,
-	template <typename> class CheckingPolicy,
-	template<typename> class ThreadingModel
->
-class SmartPtr: public CheckingPolicy<T>, public ThreadingModel<SmartPtr>
+template<typename T>
+class LockingProxy
 {
-	T* operator->()
+public:
+	LockingProxy(T* pObj): pointee_(pObj)
 	{
-		typename ThreadingModel<SmartPtr>::Lock guard(*this);
-		CheckingPolicy<T>::Check(pointee_);
+		pointee_->Lock();
+	}
+
+	~LockingProxy()
+	{
+		pointee_->UnLock();
+	}
+
+	T* operator->() const
+	{
 		return pointee_;
 	}
+
+private:
+	LockingProxy& operator=(const LockingProxy&);
+	T* pointee_;
 };
 
 
@@ -62,4 +69,30 @@ protected:
 
 private:
 
+};
+
+
+template
+<
+	typename T,
+	template <typename> class OwnershipPolicy,
+	template <typename> class CheckingPolicy,
+	template <typename> class ThreadingModel
+>
+class SmartPtr : public CheckingPolicy<T>, public ThreadingModel<SmartPtr>
+{
+	T* operator->()
+	{
+		typename ThreadingModel<SmartPtr>::Lock guard(*this);
+		CheckingPolicy<T>::Check(pointee_);
+		return pointee_;
+	}
+
+	LockingProxy<T> operator->() const
+	{
+		return LockingProxy<T>(pointee_);
+	}
+
+private:
+	T* pointee_;
 };
