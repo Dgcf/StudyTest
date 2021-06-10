@@ -7,6 +7,7 @@
 #include "visitable.h"
 #include "visitor.h"
 #include "typetraits.h"
+#include "SmartPtr.h"
 
 // static int glo = Singletons2::Instance()->test();
 
@@ -50,3 +51,5 @@ public:
 		cout << "TestTypeTraits::func1" << str << endl;
 	}
 };
+
+void test_GetImpl_DefaultSPStorage();

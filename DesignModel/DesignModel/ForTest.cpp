@@ -87,4 +87,11 @@ void test_typetraits()
 	cout << "int isMemPtr:  " << (isMemPtr ? "is member ptr" : "is not member ptr") << "\n";
 }
 
+void test_GetImpl_DefaultSPStorage()
+{
+	DefaultSPStorage<int> d;
+	GetImpl<int>(d);
+	DefaultSPStorage<int>::StoredType p = GetImplRef<int>(d);
+}
+
 

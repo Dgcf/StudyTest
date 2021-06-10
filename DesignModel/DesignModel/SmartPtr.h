@@ -3,36 +3,6 @@
 
 
 template<typename T>
-struct NoChecking
-{
-	static void Check(T*) {}
-};
-
-template<typename T>
-struct EnforceNotNull
-{
-	class NullPointerException: public std::exception{...};
-	static void Check(T* ptr)
-	{
-		if (!ptr)
-		{
-			throw NullPointException();
-		}
-	}
-};
-
-
-template<typename T>
-struct EnsureNotNull
-{
-	static void Check(T*& ptr)
-	{
-		if (!ptr)
-			ptr = GetDefaultValue();
-	}
-};
-
-template<typename T>
 class LockingProxy
 {
 public:
@@ -57,42 +27,94 @@ private:
 };
 
 
+
 template<typename T>
-class DefaultSmartPtrStorage
+class DefaultSPStorage
 {
 public:
+	typedef T* StoredType;
+	typedef T* InitPointerType;
 	typedef T* PointerType;
 	typedef T& ReferenceType;
 
-protected:
-	PointerType GetPointer() { }
+	DefaultSPStorage() : pointee_(Default())
+	{}
 
-private:
+	DefaultSPStorage(const DefaultSPStorage&) = delete;
 
-};
+	DefaultSPStorage(const StoredType& p) : pointee_(p)
+	{}
 
-
-template
-<
-	typename T,
-	template <typename> class OwnershipPolicy,
-	template <typename> class CheckingPolicy,
-	template <typename> class ThreadingModel
->
-class SmartPtr : public CheckingPolicy<T>, public ThreadingModel<SmartPtr>
-{
-	T* operator->()
+	PointerType operator->() const
 	{
-		typename ThreadingModel<SmartPtr>::Lock guard(*this);
-		CheckingPolicy<T>::Check(pointee_);
 		return pointee_;
 	}
 
-	LockingProxy<T> operator->() const
+	PointerType operator*() const
 	{
-		return LockingProxy<T>(pointee_);
+		return *pointee_;
+	}
+
+	template<typename Y> 
+	friend typename DefaultSPStorage<Y>::PointerType GetImpl(const DefaultSPStorage<Y>& sp);
+
+	template<typename Y>
+	friend const typename DefaultSPStorage<Y>::StoredType& GetImplRef(const DefaultSPStorage<Y>& sp);
+
+	template<typename T>
+	friend typename DefaultSPStorage<T>::StoredType GetImplRef(DefaultSPStorage<T>& sp);
+
+protected:
+	static StoredType Default()
+	{
+		return nullptr;
 	}
 
 private:
-	T* pointee_;
+	StoredType pointee_;
 };
+
+
+template<typename T>
+inline typename DefaultSPStorage<T>::PointerType GetImpl(const DefaultSPStorage<T>& sp)
+{
+	return sp.pointee_;
+}
+
+template<typename T>
+inline const typename DefaultSPStorage<T>::StoredType& GetImplRef(const DefaultSPStorage<T>& sp)
+{
+	return sp.pointee_;
+}
+
+template<typename T>
+inline typename DefaultSPStorage<T>::StoredType GetImplRef(DefaultSPStorage<T>& sp)
+{
+	return sp.pointee_;
+}
+
+
+//template
+//<
+//	typename T,
+//	template <typename> class OwnershipPolicy,
+//	template <typename> class CheckingPolicy,
+//	template <typename> class ThreadingModel
+//>
+//class SmartPtr : public CheckingPolicy<T>, public ThreadingModel<SmartPtr>
+//{
+//	T* operator->()
+//	{
+//		typename ThreadingModel<SmartPtr>::Lock guard(*this);
+//		CheckingPolicy<T>::Check(pointee_);
+//		return pointee_;
+//	}
+//
+//	LockingProxy<T> operator->() const
+//	{
+//		return LockingProxy<T>(pointee_);
+//	}
+//
+//private:
+//	T* pointee_;
+//};

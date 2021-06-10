@@ -91,59 +91,60 @@ void test_singleton1();
 
 void test_singleton2();
 
-template<typename T>
-class SingleThread
-{
-public:
-    typedef T VolatileType;
-};
 
-template
-<
-    typename T,
-    template <typename> class CreationPolicy=CreateUsingNew,
-    template <typename> class LifetimePolicy=DefaultLifeTime,
-    template <typename> class ThreadingModel=SingleThread,
->
-class SingletonHolder
-{
-public:
-    static T& Instance();
-
-private:
-    static void DestroySingleton();
-    SingletonHolder();
-
-    typedef ThreadingModel<T>::VolatileType InstanceType;
-    static InstanceType* pInstance_;
-    static bool destroyed_;
-};
-
-template<typename T, class CreationPolicy<>, class LifetimePolicy<>, class ThreadingModel<>>
-inline T& SingletonHolder<T, CreationPolicy<>, LifetimePolicy<>, ThreadingModel<>>::Instance()
-{
-    if (!pInstance_)
-    {
-        typename ThreadingModel<T>::Lock guard;
-        if (!pInstance_)
-        {
-            if (destroyed_)
-            {
-                LifetimePolicy<T>::OnDeadference();
-                destroyed_ = false;
-            }
-            pInstance_ = CreationPolicy<T>::Create();
-            LifetimePolicy<T>::ScheduleCall(&DestroySingleton);
-        }
-    }
-    return *pInstance_;
-}
-
-template<typename T, class CreationPolicy<>, class LifetimePolicy<>, class ThreadingModel<>>
-inline void SingletonHolder<T, CreationPolicy<>, LifetimePolicy<>, ThreadingModel<>>::DestroySingleton()
-{
-    assert(!destroyed_);
-    CreationPolicy<T>::Destroy(pInstance_);
-    pInstance_ = 0;
-    destroyed_ = true;
-}
+//template<typename T>
+//class SingleThread
+//{
+//public:
+//    typedef T VolatileType;
+//};
+//
+//template
+//<
+//    typename T,
+//    template <typename> class CreationPolicy=CreateUsingNew,
+//    template <typename> class LifetimePolicy=DefaultLifeTime,
+//    template <typename> class ThreadingModel=SingleThread,
+//>
+//class SingletonHolder
+//{
+//public:
+//    static T& Instance();
+//
+//private:
+//    static void DestroySingleton();
+//    SingletonHolder();
+//
+//    typedef ThreadingModel<T>::VolatileType InstanceType;
+//    static InstanceType* pInstance_;
+//    static bool destroyed_;
+//};
+//
+//template<typename T, class CreationPolicy<>, class LifetimePolicy<>, class ThreadingModel<>>
+//inline T& SingletonHolder<T, CreationPolicy<>, LifetimePolicy<>, ThreadingModel<>>::Instance()
+//{
+//    if (!pInstance_)
+//    {
+//        typename ThreadingModel<T>::Lock guard;
+//        if (!pInstance_)
+//        {
+//            if (destroyed_)
+//            {
+//                LifetimePolicy<T>::OnDeadference();
+//                destroyed_ = false;
+//            }
+//            pInstance_ = CreationPolicy<T>::Create();
+//            LifetimePolicy<T>::ScheduleCall(&DestroySingleton);
+//        }
+//    }
+//    return *pInstance_;
+//}
+//
+//template<typename T, class CreationPolicy<>, class LifetimePolicy<>, class ThreadingModel<>>
+//inline void SingletonHolder<T, CreationPolicy<>, LifetimePolicy<>, ThreadingModel<>>::DestroySingleton()
+//{
+//    assert(!destroyed_);
+//    CreationPolicy<T>::Destroy(pInstance_);
+//    pInstance_ = 0;
+//    destroyed_ = true;
+//}
