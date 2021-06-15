@@ -86,4 +86,6 @@ void test_alignas_0();
 
 void test_pragmapack_0();
 
+void test_basic1();
+
 //#pragma pack(show)

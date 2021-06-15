@@ -85,3 +85,12 @@ void test_pragmapack_0()
 	//cout << "sizeof(STR2): " << sizeof(STR2) << "; alignof(STR2): " << alignof(STR2) << endl;
 	//simulate();
 }
+
+void test_basic1()
+{
+	/*unsigned u = 10;
+	int i = -42;
+	cout << u + i << endl;*/
+	int a = 10;
+	printf("%d, %x, %o", a, a, a);
+}

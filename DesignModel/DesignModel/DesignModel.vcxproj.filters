@@ -86,5 +86,8 @@
     <ClInclude Include="MemAlloc.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="static_check.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

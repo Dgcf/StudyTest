@@ -91,7 +91,14 @@ void test_GetImpl_DefaultSPStorage()
 {
 	DefaultSPStorage<int> d;
 	GetImpl<int>(d);
-	DefaultSPStorage<int>::StoredType p = GetImplRef<int>(d);
+	//DefaultSPStorage<int>::StoredType p = GetImplRef<int>(d);
+}
+
+void test_LockedStorage()
+{
+	LockedStorage<int> l(new int(4));
+	int* t = GetImplRef(l);
+	cout << "LockedStorage<int>::ReferenceType: " << *t << endl;
 }
 
 

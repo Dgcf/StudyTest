@@ -53,3 +53,5 @@ public:
 };
 
 void test_GetImpl_DefaultSPStorage();
+
+void test_LockedStorage();

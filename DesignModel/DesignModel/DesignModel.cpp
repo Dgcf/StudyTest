@@ -24,6 +24,6 @@ int main()
 
     //test_visitor();
     //test_typetraits();
-    test_GetImpl_DefaultSPStorage();
+    test_LockedStorage();
 }
 
