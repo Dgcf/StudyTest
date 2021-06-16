@@ -10,6 +10,14 @@ typedef struct BiTNode
 }BiTNode, * BiTree;
 
 
+typedef struct AVLTNode
+{
+	int data;
+	int bf;
+	AVLTNode* lchild, * rchild;
+}AVLTNode, * AVLTree;
+
+
 class CTree
 {
 public:

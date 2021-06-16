@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{ed81ff2e-1d70-4dcc-aee5-698e59329826}</ProjectGuid>
-    <RootNamespace>DataStruct</RootNamespace>
+    <ProjectGuid>{3a6a48ce-569c-4583-ba56-90cdef583c10}</ProjectGuid>
+    <RootNamespace>LeetCode</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,32 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CList.cpp" />
-    <ClCompile Include="CSearch.cpp" />
-    <ClCompile Include="CSort.cpp" />
-    <ClCompile Include="CStr.cpp" />
-    <ClCompile Include="CTree.cpp" />
-    <ClCompile Include="CVector.cpp" />
-    <ClCompile Include="DataStruct.cpp" />
-    <ClCompile Include="ForTest.cpp" />
-    <ClCompile Include="SearchTest.cpp" />
-    <ClCompile Include="SetMapTest.cpp" />
-    <ClCompile Include="TreeTest.cpp" />
-    <ClCompile Include="Unorder.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="CList.h" />
-    <ClInclude Include="common.h" />
-    <ClInclude Include="CSearch.h" />
-    <ClInclude Include="CSort.h" />
-    <ClInclude Include="CStr.h" />
-    <ClInclude Include="CTree.h" />
-    <ClInclude Include="CVector.h" />
-    <ClInclude Include="ForTest.h" />
-    <ClInclude Include="SearchTest.h" />
-    <ClInclude Include="SetMapTest.h" />
-    <ClInclude Include="TreeTest.h" />
-    <ClInclude Include="Unorder.h" />
+    <ClCompile Include="LeetCode.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

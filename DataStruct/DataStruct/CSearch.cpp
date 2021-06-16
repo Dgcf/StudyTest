@@ -75,6 +75,38 @@ int CSearch::binary_search1(int* a, int n, int key)
 	return -1;
 }
 
+int CSearch::binary_search_test1(int* a, int n, int v)
+{
+	if (!a || n <= 0)
+	{
+		return -1;
+	}
+
+	int start = 0;
+	int end = n - 1;
+	int mid = -1;
+	int res = -1;
+	
+	while (start <= end)
+	{
+		mid = (end + start) / 2;
+		if (v > a[mid])
+		{
+			start = mid + 1;
+		}
+		else if (v < a[mid])
+		{
+			end = mid - 1;
+		}
+		else
+		{
+			return mid;
+		}
+	}
+
+	return res;
+}
+
 bool CSearch::search_bst(BiTree T, int key, BiTree f, BiTree* p)
 {
 	if (!T) {
@@ -174,12 +206,12 @@ bool CSearch::delete_bst(BiTree* T, int key)
 	}
 }
 
-void CSearch::R_Rotate(BiTree1* p)
-{
-	BiTree1 L = (*p)->lchild;
-	(*p)->lchild = L->rchild;
-	(*p)->rchild = *p;
-}
+//void CSearch::R_Rotate(BiTree1* p)
+//{
+//	BiTree1 L = (*p)->lchild;
+//	(*p)->lchild = L->rchild;
+//	(*p)->rchild = *p;
+//}
 
 void SearchTest::BinaryTest()
 {

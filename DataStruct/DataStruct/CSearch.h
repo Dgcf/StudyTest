@@ -4,14 +4,6 @@
 using namespace std;
 
 
-typedef struct BiTNode1
-{
-	int data;
-	int bf;
-	BiTNode1* lchild, * rchild;
-}BiTNode1, * BiTree1;
-
-
 class CSearch
 {
 public:
@@ -22,6 +14,9 @@ public:
 	// 二分查找
 	int binary_search(int* a, int n, int key);
 	int binary_search1(int* a, int n, int key);
+
+	// a的排列从小到大
+	int binary_search_test1(int* a, int n, int v);
 
 	// 插值查找
 
@@ -35,8 +30,11 @@ public:
 	bool delete_data(BiTree* p);
 	bool delete_bst(BiTree* T, int key);
 
-	void R_Rotate(BiTree1* p);
+	//void R_Rotate(BiTree1* p);
 
+	// AVL树
+	 
+	
 	// 2-3树
 
 
