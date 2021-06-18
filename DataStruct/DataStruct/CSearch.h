@@ -30,9 +30,9 @@ public:
 	bool delete_data(BiTree* p);
 	bool delete_bst(BiTree* T, int key);
 
-	//void R_Rotate(BiTree1* p);
 
 	// AVLÊ÷
+	void R_Rotate(AVLTree* p);
 	 
 	
 	// 2-3Ê÷

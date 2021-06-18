@@ -58,3 +58,26 @@ inline void test_is_void()
 	z2.judge();
 	std::is_void<void>();
 }
+
+/*****************************
+* std::conjunction_v
+*****************************/
+//template<class, class>
+//constexpr int abc = 11;
+
+template<typename _Ty>
+constexpr int abc = 10;
+
+template<typename T, typename... Ts>
+std::enable_if_t<std::conjunction_v<std::is_same<T, Ts>...>>
+func(T, Ts...) {
+	std::cout << "all types in pack are T\n";
+}
+
+// otherwise
+template<typename T, typename... Ts>
+std::enable_if_t<!std::conjunction_v<std::is_same<T, Ts>...>>
+func(T, Ts...) {
+	std::cout << "not all types in pack are T\n";
+}
+

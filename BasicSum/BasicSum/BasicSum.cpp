@@ -167,7 +167,7 @@ template<> struct CompileTimeError<true> {};
 
 int main()
 {
-	test_basic1();
+	test_forward();
     return 0;
 }
 

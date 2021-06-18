@@ -206,12 +206,13 @@ bool CSearch::delete_bst(BiTree* T, int key)
 	}
 }
 
-//void CSearch::R_Rotate(BiTree1* p)
-//{
-//	BiTree1 L = (*p)->lchild;
-//	(*p)->lchild = L->rchild;
-//	(*p)->rchild = *p;
-//}
+void CSearch::R_Rotate(AVLTree* p)
+{
+	AVLTree L = (*p)->lchild;
+	(*p)->lchild = L->rchild;
+	(*p)->rchild = *p;
+	*p = L;
+}
 
 void SearchTest::BinaryTest()
 {
@@ -228,6 +229,8 @@ void SearchTest::BinaryTest()
 	cout << "93 is: " << index << endl;
 	index = search.binary_search1(x, len, 123);
 	cout << "123 is: " << index << endl;
+
+	std::map<int, int> a;
 }
 
 void SearchTest11()

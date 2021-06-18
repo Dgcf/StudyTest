@@ -94,3 +94,19 @@ void test_basic1()
 	int a = 10;
 	printf("%d, %x, %o", a, a, a);
 }
+
+void test_bind_abc()
+{
+	ABC1 a;
+	std::function<void()> f = std::bind(&ABC1::open, a);
+	std::function<void()> f1 = std::bind(&ABC1::open, &a);
+	f();
+
+	//typedef void (ABC1::* f)();
+}
+
+void test_forward()
+{
+	ABC1 c;
+	ABC1&& a = std::forward<ABC1&&>(c);
+}

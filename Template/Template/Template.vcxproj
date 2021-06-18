@@ -140,23 +140,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CTemBind.cpp" />
+    <ClCompile Include="ForTest.cpp" />
     <ClCompile Include="FuncTemp.cpp" />
     <ClCompile Include="question.cpp" />
     <ClCompile Include="Template.cpp" />
-    <ClCompile Include="TestOther.cpp" />
-    <ClCompile Include="TestType.cpp" />
     <ClCompile Include="typetraits.cpp" />
     <ClCompile Include="wkcd.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common.h" />
     <ClInclude Include="CTemBind.h" />
+    <ClInclude Include="ForTest.h" />
     <ClInclude Include="FuncTemp.h" />
     <ClInclude Include="question.h" />
     <ClInclude Include="returntype.h" />
     <ClInclude Include="tem.h" />
-    <ClInclude Include="TestOther.h" />
-    <ClInclude Include="TestType.h" />
     <ClInclude Include="typetraits.h" />
     <ClInclude Include="VariableParameter.h" />
     <ClInclude Include="wkcd.h" />

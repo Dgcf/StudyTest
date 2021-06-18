@@ -89,3 +89,23 @@ void test_pragmapack_0();
 void test_basic1();
 
 //#pragma pack(show)
+
+class ABC1
+{
+public:
+	void open()
+	{
+		cout << "111" << endl;
+	}
+
+	ABC1() = default;
+
+	ABC1(const ABC1& a) = delete;
+	/*{
+		cout << "copy" << endl;
+	}*/
+};
+
+void test_bind_abc();
+
+void test_forward();
