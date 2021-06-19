@@ -14,6 +14,12 @@ class ForTest
 public:
 	void test_Search();
 
+// map test
+	void map_test_create0();
+
+// set test
+	void set_test_create0();
+
 private:
 	CSearch search_;
 };

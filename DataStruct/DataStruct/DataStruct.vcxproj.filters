@@ -21,15 +21,6 @@
     <ClCompile Include="Unorder.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="SetMapTest.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="SearchTest.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="TreeTest.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="CSort.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -56,16 +47,7 @@
     <ClInclude Include="Unorder.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="SetMapTest.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="common.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="SearchTest.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="TreeTest.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="CSort.h">

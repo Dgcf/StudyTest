@@ -147,9 +147,6 @@
     <ClCompile Include="CVector.cpp" />
     <ClCompile Include="DataStruct.cpp" />
     <ClCompile Include="ForTest.cpp" />
-    <ClCompile Include="SearchTest.cpp" />
-    <ClCompile Include="SetMapTest.cpp" />
-    <ClCompile Include="TreeTest.cpp" />
     <ClCompile Include="Unorder.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -161,9 +158,6 @@
     <ClInclude Include="CTree.h" />
     <ClInclude Include="CVector.h" />
     <ClInclude Include="ForTest.h" />
-    <ClInclude Include="SearchTest.h" />
-    <ClInclude Include="SetMapTest.h" />
-    <ClInclude Include="TreeTest.h" />
     <ClInclude Include="Unorder.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
