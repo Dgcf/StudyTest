@@ -47,4 +47,3 @@ public:
 	void BinaryTest();
 };
 
-void SearchTest11();

@@ -81,3 +81,32 @@ func(T, Ts...) {
 	std::cout << "not all types in pack are T\n";
 }
 
+/*************************
+* std::addressofµÄÓÃ·¨
+**************************/
+template<class T>
+struct Ptr {
+	T* pad; // add pad to show difference between 'this' and 'data'
+	T* data;
+	Ptr(T* arg) : pad(nullptr), data(arg)
+	{
+		std::cout << "Ctor this = " << this << std::endl;
+	}
+
+	~Ptr() { delete data; }
+	T** operator&() 
+	{ 
+		return &data; 
+	}
+};
+
+template<class T>
+inline void f(Ptr<T>* p)
+{
+	std::cout << "Ptr overload called with p = " << p << '\n';
+}
+
+inline void f(int** p)
+{
+	std::cout << "int** overload called with p = " << p << '\n';
+}

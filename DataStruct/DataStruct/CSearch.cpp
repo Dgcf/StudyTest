@@ -232,9 +232,3 @@ void SearchTest::BinaryTest()
 
 	std::map<int, int> a;
 }
-
-void SearchTest11()
-{
-	SearchTest tt;
-	tt.BinaryTest(); 
-}

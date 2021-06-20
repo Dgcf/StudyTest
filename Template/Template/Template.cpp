@@ -4,12 +4,11 @@
 #include "ForTest.h"
 
 
-
 int main()
 {
     ForTest test;
-    test.test_conjunction();
-
+    test.test_addressof();
+    //test.test_varitemp();
     return 0;
 }
 
