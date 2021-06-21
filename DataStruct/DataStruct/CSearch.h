@@ -20,6 +20,7 @@ public:
 
 	// 插值查找
 
+// 二叉查找树操作
 	// 二叉排序树的查找
 	bool search_bst(BiTree T, int key, BiTree f, BiTree* p);
 
@@ -31,9 +32,20 @@ public:
 	bool delete_bst(BiTree* T, int key);
 
 
-	// AVL树
+// AVL树
+	// 右旋转
 	void R_Rotate(AVLTree* p);
-	 
+
+	// 左旋转
+	void L_Rotate(AVLTree* p);
+
+	// 左平衡旋转:对以指针T所指结点为根的二叉树做左平衡旋转处理
+#define LH 1     // 左高
+#define EH 0     // 等高
+#define RH -1    // 右高
+
+	void LeftBalance(AVLTree* T);
+	
 	
 	// 2-3树
 

@@ -201,7 +201,15 @@ bool CSearch::delete_bst(BiTree* T, int key)
 	{
 		if (key == (*T)->data)
 		{
-
+			return delete_data(T);
+		}
+		else if (key < (*T)->data)
+		{
+			delete_bst(&((*T)->lchild), key);
+		}
+		else if (key > (*T)->data)
+		{
+			delete_bst(&((*T)->rchild), key);
 		}
 	}
 }
@@ -212,6 +220,51 @@ void CSearch::R_Rotate(AVLTree* p)
 	(*p)->lchild = L->rchild;
 	(*p)->rchild = *p;
 	*p = L;
+}
+
+void CSearch::L_Rotate(AVLTree* p)
+{
+	AVLTree R = (*p)->rchild;
+	(*p)->rchild = R->lchild;
+	R->lchild = *p;
+	*p = R;
+}
+
+void CSearch::LeftBalance(AVLTree* T)
+{
+	AVLTree L, Lr;
+	L = (*T)->lchild;
+	switch (L->bf)
+	{
+	case LH:
+		(*T)->bf = L->bf = EH;
+		R_Rotate(T);
+		break;
+	case RH:
+		Lr = L->rchild;
+		switch (Lr->bf)
+		{
+		case LH:
+			(*T)->bf = RH;  // ?
+			L->bf = EH;
+			break;
+		case EH:
+			(*T)->bf = L->bf = EH;
+			break;
+		case RH:
+			(*T)->bf = EH;  // ?
+			L->bf = LH;
+			break;
+		default:
+			break;
+		}
+		Lr->bf = EH;
+		L_Rotate(&(*T)->lchild);
+		R_Rotate(T);
+		break;
+	default:
+		break;
+	}
 }
 
 void SearchTest::BinaryTest()
