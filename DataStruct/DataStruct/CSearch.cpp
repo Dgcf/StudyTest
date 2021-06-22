@@ -267,6 +267,85 @@ void CSearch::LeftBalance(AVLTree* T)
 	}
 }
 
+void CSearch::RightBalance(AVLTree* T)
+{
+}
+
+int CSearch::InsertAVL(AVLTree* T, int e, int* taller)
+{
+	if(!*T)
+	{
+		*T = new AVLTNode;
+		(*T)->data = e;
+		(*T)->lchild = (*T)->rchild = nullptr;
+		(*T)->bf = EH;
+		*taller = true;
+	}
+	else
+	{
+		if (e == (*T)->data)
+		{
+			*taller = false;
+			return 0;
+		}
+		if (e < (*T)->data)
+		{
+			if (!InsertAVL(&(*T)->lchild, e, taller))
+			{
+				return 0;
+			}
+			if (taller)
+			{
+				switch ((*T)->bf)
+				{
+				case LH:
+					LeftBalance(T);
+					*taller = 0;
+					break;
+				case EH:
+					(*T)->bf = LH;
+					*taller = 1;
+					break;
+				case RH:
+					(*T)->bf = EH;
+					*taller = 0;
+					break;
+				default:
+					break;
+				}
+			}
+		}
+		else
+		{
+			if (!InsertAVL(&(*T)->rchild, e, taller))
+			{
+				return 0;
+			}
+			if (*taller)
+			{
+				switch ((*T)->bf)
+				{
+				case LH:
+					(*T)->bf = EH;
+					*taller = 0;
+					break;
+				case EH:
+					(*T)->bf = RH;
+					*taller = 1;
+					break;
+				case RH:
+					RightBalance(T);
+					*taller = 0;
+					break;
+				default:
+					break;
+				}
+			}
+		}
+	}
+	return 1;
+}
+
 void SearchTest::BinaryTest()
 {
 	int x[] = { 1,4,7,9,12,15,18,24,28,31,38,47,51,66,93 };

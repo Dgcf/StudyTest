@@ -39,12 +39,19 @@ public:
 	// 左旋转
 	void L_Rotate(AVLTree* p);
 
-	// 左平衡旋转:对以指针T所指结点为根的二叉树做左平衡旋转处理
+	
 #define LH 1     // 左高
 #define EH 0     // 等高
 #define RH -1    // 右高
 
+	// 左平衡旋转:对以指针T所指结点为根的二叉树做左平衡旋转处理
 	void LeftBalance(AVLTree* T);
+	
+	// 右旋转平衡
+	void RightBalance(AVLTree* T);
+
+	// 插入
+	int InsertAVL(AVLTree* T, int e, int* taller);
 	
 	
 	// 2-3树
