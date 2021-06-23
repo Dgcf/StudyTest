@@ -49,6 +49,17 @@ void ForTest::set_test_create0()
 	cout << endl;
 }
 
+void ForTest::test_avlinsert()
+{
+	int a[10] = { 3,2,1,4,5,6,7,10,9,8 };
+	AVLTree t = nullptr;
+	int taller;
+	for (int i = 0; i < 10; i++)
+	{
+		search_.InsertAVL(&t, a[i], &taller);
+	}
+}
+
 
 void ForTest::map_test_create0()
 {

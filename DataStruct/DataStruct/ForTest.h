@@ -20,6 +20,9 @@ public:
 // set test
 	void set_test_create0();
 
+	// Æ½ºâ¶ş²æÊ÷
+	void test_avlinsert();
+
 private:
 	CSearch search_;
 };

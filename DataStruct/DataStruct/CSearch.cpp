@@ -244,7 +244,7 @@ void CSearch::LeftBalance(AVLTree* T)
 		Lr = L->rchild;
 		switch (Lr->bf)
 		{
-		case LH:
+		case LH:  // 1
 			(*T)->bf = RH;  // ?
 			L->bf = EH;
 			break;
@@ -346,21 +346,3 @@ int CSearch::InsertAVL(AVLTree* T, int e, int* taller)
 	return 1;
 }
 
-void SearchTest::BinaryTest()
-{
-	int x[] = { 1,4,7,9,12,15,18,24,28,31,38,47,51,66,93 };
-	int len = sizeof(x) / sizeof(int);
-	CSearch search;
-	int index = search.binary_search1(x, len, -12);
-	cout << "-12 is: " << index << endl;
-	index = search.binary_search1(x, len, 1);
-	cout << "1 is: " << index << endl;
-	index = search.binary_search1(x, len, 51);
-	cout << "51 is: " << index << endl;
-	index = search.binary_search1(x, len, 93);
-	cout << "93 is: " << index << endl;
-	index = search.binary_search1(x, len, 123);
-	cout << "123 is: " << index << endl;
-
-	std::map<int, int> a;
-}

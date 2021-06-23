@@ -61,8 +61,4 @@ public:
 
 };
 
-class SearchTest {
-public:
-	void BinaryTest();
-};
 

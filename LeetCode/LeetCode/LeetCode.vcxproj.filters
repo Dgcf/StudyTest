@@ -18,5 +18,22 @@
     <ClCompile Include="LeetCode.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="CTree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ForTest.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CTree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="commmon.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ForTest.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
