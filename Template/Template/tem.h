@@ -2,13 +2,13 @@
 #include "common.h"
 
 template<typename T>
-int compare(const T& parm1, const T& parm2)
+inline int compare(const T& parm1, const T& parm2)
 {
 	cout << parm1 << " " << parm2 << endl;
 	return 0;
 }
 
-int (*pf1)(const int&, const int&) = compare;
+// int (*pf1)(const int&, const int&) = compare;
 
 template<typename T>
 void f3(T&& val)
@@ -23,7 +23,7 @@ typename remove_reference<T>::type&& tmove(T&& t)	// ÒıÓÃÕÛµş£¬´Ë²ÎÊı¿ÉÒÔºÍÈÎºÎÀ
 	return static_cast<typename remove_reference<T>::type&&>(t);
 }
 
-void ft1(int v1, int& v2)
+inline void ft1(int v1, int& v2)
 {
 	cout << v1 << " " << ++v2 << endl;
 }
@@ -58,7 +58,7 @@ string debug_rep(T* p)
 	return ret.str();
 }
 
-string debug_rep(string &p)
+inline string debug_rep(string &p)
 {
 	cout << "string debug_rep" << endl;
 	cout << p << endl;
@@ -78,11 +78,65 @@ ostream& print(ostream& os, const T& t, const Args&... rest)
 	return print(os, rest...);
 }
 
+template<bool v>
+class Bool2Type
+{
+	enum 
+	{
+		value = v
+	};
+};
 
 
-//template<typename T>
-//void print0(T t)
-//{
-//	string s = c;
-//	cout << s << endl;
-//}
+template<typename T>
+class VoidTest
+{
+public:
+	VoidTest()
+	{
+		Bool2Type<std::is_void<T>::value> b;
+		int len = FixedLen(b);
+		cout << "size: " << len << endl;
+	}
+
+	int FixedLen(Bool2Type<false>)
+	{
+		cout << "false type" << endl;
+		return sizeof(T);
+	}
+
+	int FixedLen(Bool2Type<true>)
+	{
+		cout << "true type" << endl;
+		return 0; 
+	}
+
+	/*typename std::enable_if<std::is_void<T>::value>::type
+	test()
+	{
+		sizeof(int);
+		cout << "is void" << endl;
+	}
+
+	typename std::enable_if<!std::is_void<T>::value>::type
+		test()
+	{
+		sizeof(T);
+		cout << "is not void" << endl;
+	}*/
+};
+
+struct T 
+{
+	enum { int_t, float_t } type;
+	
+	template <typename Integer,
+		std::enable_if_t<std::is_integral<Integer>::value, bool> = true
+	>
+		T(Integer) : type(int_t) {}
+
+	template <typename Floating,
+		std::enable_if_t<std::is_floating_point<Floating>::value, bool> = true
+	>
+		T(Floating) : type(float_t) {} // OK
+};

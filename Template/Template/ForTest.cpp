@@ -31,3 +31,15 @@ void ForTest::test_addressof()
 	f(&p);                 // calls int** overload
 	f(std::addressof(p));
 }
+
+void ForTest::test_voidtemp()
+{
+	VoidTest<void> v;
+	VoidTest<int> v1;
+	//T t(10);
+}
+
+void ForTest::test_variable_parm()
+{
+	cout << "type: " << typeid(TypeAt<2, int, float, double, string>).name() << endl;
+}

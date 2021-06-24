@@ -32,14 +32,12 @@ void CTree::InsertBST(int key)
         return;
     }
     TreeNode* node = new TreeNode(key);
-    if (key < node_.val)
-    {
-
-    }
+    Insert(node, &node_);
 }
 
 void CTree::Insert(TreeNode* node, TreeNode* src)
 {
+    // 如果小于则插入到左子节点
     if (node->val < src->val)
     {
         if (src->left)
@@ -51,7 +49,18 @@ void CTree::Insert(TreeNode* node, TreeNode* src)
             src->left = node;
         }
     }
-    else if(node->val )
+    else if(node->val > src->val)
+    {
+        if (src->right)
+        {
+            Insert(node, src->right);
+        }
+        else
+        {
+            src->right = node;
+        }
+    }
+    else 
     {
 
     }

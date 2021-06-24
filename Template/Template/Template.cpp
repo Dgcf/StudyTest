@@ -7,8 +7,9 @@
 int main()
 {
     ForTest test;
-    test.test_addressof();
+    //test.test_voidtemp();
     //test.test_varitemp();
+    test.test_variable_parm();
     return 0;
 }
 

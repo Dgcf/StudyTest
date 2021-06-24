@@ -2,6 +2,8 @@
 
 #include "typetraits.h"
 #include "VariableTemp.h"
+#include "VariableParameter.h"
+#include "tem.h"
 
 
 class ForTest
@@ -14,5 +16,9 @@ public:
 	void test_varitemp();
 
 	void test_addressof();
+
+	void test_voidtemp();
+
+	void test_variable_parm();
 };
 
