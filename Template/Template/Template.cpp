@@ -9,7 +9,7 @@ int main()
     ForTest test;
     //test.test_voidtemp();
     //test.test_varitemp();
-    test.test_variable_parm();
+    test.test_sfinae();
     return 0;
 }
 

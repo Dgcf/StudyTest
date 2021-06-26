@@ -4,6 +4,7 @@
 #include "VariableTemp.h"
 #include "VariableParameter.h"
 #include "tem.h"
+#include "Sfinae.h"
 
 
 class ForTest
@@ -20,5 +21,9 @@ public:
 	void test_voidtemp();
 
 	void test_variable_parm();
+
+	void test_sfinae();
+
+	void test_variable_type();
 };
 

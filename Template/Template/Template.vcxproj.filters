@@ -71,5 +71,8 @@
     <ClInclude Include="VariableTemp.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Sfinae.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

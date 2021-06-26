@@ -154,6 +154,7 @@
     <ClInclude Include="FuncTemp.h" />
     <ClInclude Include="question.h" />
     <ClInclude Include="returntype.h" />
+    <ClInclude Include="Sfinae.h" />
     <ClInclude Include="tem.h" />
     <ClInclude Include="typetraits.h" />
     <ClInclude Include="VariableParameter.h" />

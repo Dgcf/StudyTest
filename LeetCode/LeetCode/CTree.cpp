@@ -62,7 +62,7 @@ void CTree::Insert(TreeNode* node, TreeNode* src)
     }
     else 
     {
-
+        std::is_void
     }
 }
 
