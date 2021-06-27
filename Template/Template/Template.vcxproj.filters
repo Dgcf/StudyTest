@@ -74,5 +74,11 @@
     <ClInclude Include="Sfinae.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="stack.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="NoTypeParam.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

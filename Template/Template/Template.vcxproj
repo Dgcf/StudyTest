@@ -152,9 +152,11 @@
     <ClInclude Include="CTemBind.h" />
     <ClInclude Include="ForTest.h" />
     <ClInclude Include="FuncTemp.h" />
+    <ClInclude Include="NoTypeParam.h" />
     <ClInclude Include="question.h" />
     <ClInclude Include="returntype.h" />
     <ClInclude Include="Sfinae.h" />
+    <ClInclude Include="stack.hpp" />
     <ClInclude Include="tem.h" />
     <ClInclude Include="typetraits.h" />
     <ClInclude Include="VariableParameter.h" />

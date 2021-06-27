@@ -9,7 +9,9 @@ int main()
     ForTest test;
     //test.test_voidtemp();
     //test.test_varitemp();
-    test.test_sfinae();
+    //test.test_pointerParam();
+    TpMemFun pm = &ForTest::test_NoTypeParam;
+    (test.*pm)();
     return 0;
 }
 

@@ -5,6 +5,8 @@
 #include "VariableParameter.h"
 #include "tem.h"
 #include "Sfinae.h"
+#include "stack.hpp"
+#include "NoTypeParam.h"
 
 
 class ForTest
@@ -25,5 +27,12 @@ public:
 	void test_sfinae();
 
 	void test_variable_type();
+
+	void test_stack();
+
+	void test_NoTypeParam();
+
+	void test_pointerParam();
 };
 
+typedef void (ForTest::* TpMemFun)();

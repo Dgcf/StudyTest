@@ -167,7 +167,9 @@ template<> struct CompileTimeError<true> {};
 
 int main()
 {
-	test_forward();
+	Solution s;
+	std::vector<int> v{ 5,6,2,7,4 };
+	s.maxProductDifference(v);
     return 0;
 }
 

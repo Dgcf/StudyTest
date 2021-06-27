@@ -66,3 +66,33 @@ void ForTest::test_variable_type()
 	cout << s << endl;
 	cout << "type name: " << typeid(function_traits<int, float, double, string>::arg<3>::type).name() << endl;
 }
+
+void ForTest::test_stack()
+{
+	int x = 10;
+	list_node<int> l(x, nullptr);
+}
+
+void ForTest::test_NoTypeParam()
+{
+	int ar[] = { 1,2,3,4,5,6,7,8 };
+	//foreach<int, print<int>>(ar, 8);
+	foreach1<int,print1>(ar, 8);
+}
+
+int global_variable = 0;
+
+void ForTest::test_pointerParam()
+{
+	wrapper<&global_variable> g;
+	g.set(1);
+	cout << g.get() << endl;
+
+	wrapper2<global_variable> g1;
+	g1.set(2);
+	cout << g1.get() << endl;
+
+	// 局部变量或指针不可用于模板参数
+	// int local_variable = 2;
+	// wrapper<&local_variable> g2;
+}
