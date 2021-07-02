@@ -142,11 +142,13 @@
     <ClCompile Include="CTree.cpp" />
     <ClCompile Include="ForTest.cpp" />
     <ClCompile Include="LeetCode.cpp" />
+    <ClCompile Include="Solution.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="commmon.h" />
     <ClInclude Include="CTree.h" />
     <ClInclude Include="ForTest.h" />
+    <ClInclude Include="Solution.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

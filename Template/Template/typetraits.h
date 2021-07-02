@@ -3,6 +3,39 @@
 #include "common.h"
 
 
+namespace my_traits
+{
+	template<typename T1, typename T2>
+	struct is_same
+	{
+		enum { value=0	};
+	};
+
+	template<typename T>
+	struct is_same<T, T>
+	{
+		enum { value = 1 };
+	};
+
+	template
+	<
+		bool C0,
+		typename C1,
+		typename C2
+	>
+	struct enable_if 
+	{
+		typedef C1 type;
+	};
+
+	template<typename C1, typename C2>
+	struct enable_if<false, C1, C2>
+	{
+		typedef C2 type;
+	};
+
+}
+
 template<typename T, typename E>
 struct check
 {

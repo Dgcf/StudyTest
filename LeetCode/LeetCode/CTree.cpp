@@ -9,7 +9,8 @@ vector<int> CTree::inorderTraversal(TreeNode* root)
 
 vector<TreeNode*> CTree::generateTrees(int n)
 {
-    
+    vector<TreeNode*> v;
+    return v;
 }
 
 void CTree::InTraversal(TreeNode* node, vector<int>& v)
@@ -62,7 +63,6 @@ void CTree::Insert(TreeNode* node, TreeNode* src)
     }
     else 
     {
-        std::is_void
     }
 }
 

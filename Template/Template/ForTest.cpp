@@ -42,6 +42,7 @@ void ForTest::test_voidtemp()
 void ForTest::test_variable_parm()
 {
 	//cout << "type: " << typeid(TypeAt<2, int, float, double, string>).name() << endl;
+
 }
 
 void ForTest::test_sfinae()
@@ -95,4 +96,48 @@ void ForTest::test_pointerParam()
 	// 局部变量或指针不可用于模板参数
 	// int local_variable = 2;
 	// wrapper<&local_variable> g2;
+}
+
+void ForTest::test_special()
+{
+	/*char s[32] = "hello, specail template";
+	print_special(s);
+
+	char* s1 = s;
+	print_special(s1);
+
+	char* s2 = new char[32];
+	print_special(s2);*/
+
+	int i0[10] = { 1,2,3,4,5,6,7,8,9,0 };
+	print_special(i0);
+
+	int* i1 = i0;
+	print_special(i1);
+
+	/*char* s2 = new char[32];
+	print_special(s2);*/
+
+	//fref(s);
+
+	//int a[10], b[42];
+	//fref(a, b);
+}
+
+void ForTest::test_mytraits()
+{
+	//cout << my_traits::is_same<int, double>::value << endl;
+	cout << my_traits::is_same<int,int>::value << endl;
+	bool s = true;
+	cout << "true type is: " << typeid(my_traits::enable_if<true, int, float>::type).name() << endl;
+	cout << "false type is: " << typeid(my_traits::enable_if<false, int, float>::type).name() << endl;
+}
+
+void ForTest::test_func_variabletemp()
+{
+	bar<int, int>(0, 1, 2);
+
+	bar(0);
+
+	// bar('a', 0);
 }

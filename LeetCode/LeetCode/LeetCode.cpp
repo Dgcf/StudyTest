@@ -3,10 +3,12 @@
 
 #include <iostream>
 #include "ForTest.h"
+#include "Solution.h"
 
 
 int main()
 {
+    test2();
     std::cout << "Hello World!\n";
 }
 

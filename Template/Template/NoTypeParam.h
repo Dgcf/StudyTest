@@ -2,7 +2,7 @@
 #include "common.h"
 
 template<typename T, void (*f)(T& v)>
-void foreach(T a[], size_t size)
+inline void foreach(T a[], size_t size)
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -11,15 +11,15 @@ void foreach(T a[], size_t size)
 }
 
 template<typename T>
-void inc(T& v)
+inline void inc(T& v)
 {
 	++v;
 }
 
 template<typename T>
-void dec(T& v) { --v; }
+inline void dec(T& v) { --v; }
 
-template<typename T> void print(T& v) { cout << ' ' << v; }
+template<typename T> inline void print(T& v) { cout << ' ' << v; }
 
 // 以指针作为模板参数
 template<int* p>
@@ -62,7 +62,7 @@ template
 	typename T,
 	template<typename TT> class Func
 >
-void foreach1(T ar[], size_t size)
+inline void foreach1(T ar[], size_t size)
 {
 	Func<T> f;
 	for (size_t i = 0; i < size; i++)
@@ -82,14 +82,14 @@ struct print1 {
 };
 
 template<size_t i>
-void print2()
+inline void print2()
 {
 	print2<i - 1>();
 	cout << i << endl;
 }
 
 template<>
-void print2<1>()
+inline void print2<1>()
 {
 	cout << 1 << std::endl;
 }

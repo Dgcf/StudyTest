@@ -7,6 +7,7 @@
 #include "Sfinae.h"
 #include "stack.hpp"
 #include "NoTypeParam.h"
+#include "SpeciaTemp.h"
 
 
 class ForTest
@@ -33,6 +34,12 @@ public:
 	void test_NoTypeParam();
 
 	void test_pointerParam();
+
+	void test_special();
+
+	void test_mytraits();
+
+	void test_func_variabletemp();
 };
 
 typedef void (ForTest::* TpMemFun)();

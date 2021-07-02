@@ -80,5 +80,8 @@
     <ClInclude Include="NoTypeParam.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="SpeciaTemp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -52,5 +52,17 @@ struct function_traits
 
 };
 
+template<typename ...TPack>
+inline void bar(TPack ...ppack, int i)
+{
+    cout << "Enter in bar" << endl;
+}
 
+template<typename T>
+inline T const& sum(T const& v) { return v; }
 
+template<typename T, typename ...TPack>
+T sum(T const& v, TPack const& ...pack)
+{
+    return v + sum(pack...);
+}
