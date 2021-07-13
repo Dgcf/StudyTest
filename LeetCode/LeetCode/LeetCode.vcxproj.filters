@@ -27,6 +27,12 @@
     <ClCompile Include="Solution.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="DynamicProgram.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SwordOffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CTree.h">
@@ -39,6 +45,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Solution.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicProgram.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SwordOffer.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

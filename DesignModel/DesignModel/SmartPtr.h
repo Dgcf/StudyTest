@@ -262,7 +262,7 @@ public:
 		assert(t);
 	}
 
-	static void Swap(AssertCheckStrict&) {
+	static void Swap(AssertCheckStrict& t) {
 		assert(t);
 	}
 };

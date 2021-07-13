@@ -220,22 +220,192 @@ public:
         
     }
 
-/*
-请你来实现一个 myAtoi(string s) 函数，使其能将字符串转换成一个 32 位有符号整数（类似 C/C++ 中的 atoi 函数）。
+    // 超出时间限制
+    int kthGrammar_My(int n, int k) {
+        std::map<int, std::list<int>> m;
+        int index = 1;
+        m[index] = std::list<int>{ 0 };
+        int num = n;
+        while (--num)
+        {
+            std::list<int> tmp = m[index];
+            std::list<int> mm;
+            for (std::list<int>::iterator iter = tmp.begin(); iter != tmp.end(); ++iter)
+            {
+                if (*iter == 0)
+                {
+                    mm.push_back(0);
+                    mm.push_back(1);
+                }
+                else if (1 == *iter)
+                {
+                    mm.push_back(1);
+                    mm.push_back(0);
+                }
+            }
+            m[++index] = mm;
+        }
+        std::list<int> r = m.at(n);
+        int x = 1;
+        for (std::list<int>::iterator iter = r.begin(); iter != r.end(); ++iter)
+        {
+            if (x++ == k)
+            {
+                return *iter;
+            }
+        }
+        return -1;
+    }
 
-函数 myAtoi(string s) 的算法如下：
+    // 1309
+    string freqAlphabets(string s) {
+        int len = s.size();
+        string res, tmp;
+        int i = 0, j = i + 2;
+        for ( ;j < len; ++i, ++j)
+        {
+            if ('#' == s[j])
+            {
+                tmp = s.substr(i, j);
+                char c = 'a' + std::stoi(tmp) - 1;
+                res += c;
+                i = j;
+                j += 2;
+            }
+            else
+            {
+                char c = s[i] + 48;
+                res += c;
+            }
+        }
+        if (j >= len && i < len)
+        {
+            while (i<len)
+            {
+                char c = s[i++] + 48;
+                res += c;
+            }
+        }
 
-读入字符串并丢弃无用的前导空格
-检查下一个字符（假设还未到字符末尾）为正还是负号，读取该字符（如果有）。 确定最终结果是负数还是正数。 如果两者都不存在，则假定结果为正。
-读入下一个字符，直到到达下一个非数字字符或到达输入的结尾。字符串的其余部分将被忽略。
-将前面步骤读入的这些数字转换为整数（即，"123" -> 123， "0032" -> 32）。如果没有读入数字，则整数为 0 。必要时更改符号（从步骤 2 开始）。
-如果整数数超过 32 位有符号整数范围 [−231,  231 − 1] ，需要截断这个整数，使其保持在这个范围内。具体来说，小于 −231 的整数应该被固定为 −231 ，大于 231 − 1 的整数应该被固定为 231 − 1 。
-返回整数作为最终结果。
-注意：
 
-本题中的空白字符只包括空格字符 ' ' 。
-除前导空格或数字后的其余字符串外，请勿忽略 任何其他字符。
-*/
+        /*string ans;
+        for (int i = 0; i < s.size(); ++i) {
+            if (i + 2 < s.size() && s[i + 2] == '#') {
+                ans += char((s[i] - '0') * 10 + (s[i + 1] - '1') + 'a');
+                i += 2;
+            }
+            else {
+                ans += char(s[i] - '1' + 'a');
+            }
+       0 }
+        return ans;*/
+
+        return res;
+    }
+
+    string largestMerge(string word1, string word2) 
+    {
+        /*
+        string s1 = "guguuuuuuuuuuuuuuguguuuuguug";
+        string s2 = "gguggggggguuggguugggggg";
+        string s3 = "guguuuuuuuuuuuuuuguguuuuguugguggggggguuggguuggggggg";
+        string s2 = "guguuuuuuuuuuuuuuguguuuuguugguggggggguuggguuggggggg"
+        string s4 = "guguuuuuuuuuuuuuuguguuuuguuggguggggggguuggguugggggg";
+        string s5 = ""
+        */
+
+        int len1 = word1.size();
+        int len2 = word2.size();
+        string res;
+        int i = 0, j = 0;
+        while (i < len1 && j < len2)
+        {
+            if (word1[i] > word2[j])
+            {
+                res += word1[i++];
+            }
+            else if (word1[i] < word2[j])
+            {
+                res += word2[j++];
+            }
+            else
+            {
+                int x = i+1, y = j+1;
+                while (1)
+                {
+                    if (x < len1 && y < len2)
+                    {
+                        if (word1[x] > word2[y])
+                        {
+                            res += word1[i++];
+                            break;
+                        }
+                        else if (word1[x] < word2[y])
+                        {
+                            res += word2[j++];
+                            break;
+                        }
+                        else
+                        {
+                            ++x; ++y;
+                        }
+                    }
+                    else if (x < len1)
+                    {
+                        if (word1[x] > word2[y-1])
+                        {
+                            res += word1[i++];
+                            break;
+                        }
+                        else if (word1[x] < word2[y-1])
+                        {
+                            res += word2[j++];
+                            break;
+                        }
+                        else
+                        {
+                            ++x;
+                        }
+                    }
+                    else if (y < len2)
+                    {
+                        if (word1[x - 1] > word2[y])
+                        {
+                            res += word1[i++];
+                            break;
+                        }
+                        else if (word1[x - 1] < word2[y])
+                        {
+                            res += word2[j++];
+                            break;
+                        }
+                        else
+                        {
+                            ++y;
+                        }
+                    }
+                    else {
+                        break;
+                    }
+                }
+                if (x >= len1 && y >= len2)
+                {
+                    break;
+                }
+            }
+        }
+        string w1, w2;
+        if (i < len1)
+        {
+            res += word1.substr(i);
+        }
+        if (j < len2)
+        {
+            res += word2.substr(j);
+        }
+
+        return res;
+    }
 };
 
 inline void test()
@@ -266,5 +436,24 @@ inline void test2()
     Solution s;
     string ss = s.convert("PAYPALISHIRING", 3);
     cout << ss.size() << endl;
+}
+
+inline void test3()
+{
+    Solution s;
+    s.freqAlphabets(
+        "10#11#12");
+}
+
+inline void test4()
+{
+    Solution s;
+    /*string s1 = "guguuuuuuuuuuuuuuguguuuuguug";
+    string s2 = "gguggggggguuggguugggggg";*/
+    string s1 = "cabaa";
+    string s2 = "bcaaa";
+    string a = s.largestMerge(s1, s2);
+
+    cout << a << endl;
 }
 

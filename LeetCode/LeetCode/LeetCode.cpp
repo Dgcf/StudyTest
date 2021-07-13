@@ -8,7 +8,8 @@
 
 int main()
 {
-    test2();
+    ForTest t;
+    t.test_sword_0();
     std::cout << "Hello World!\n";
 }
 

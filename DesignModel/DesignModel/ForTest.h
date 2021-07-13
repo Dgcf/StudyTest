@@ -8,6 +8,7 @@
 #include "visitor.h"
 #include "typetraits.h"
 #include "SmartPtr.h"
+#include "ChainOfResponsibility.h"
 
 // static int glo = Singletons2::Instance()->test();
 
@@ -55,3 +56,5 @@ public:
 void test_GetImpl_DefaultSPStorage();
 
 void test_LockedStorage();
+
+void test_ChainOfResponsibility();

@@ -101,4 +101,12 @@ void test_LockedStorage()
 	cout << "LockedStorage<int>::ReferenceType: " << *t << endl;
 }
 
+void test_ChainOfResponsibility()
+{
+	Director* d = new Director();
+	Manager* m = new Manager(d);
+	Zhuguan* z = new Zhuguan(m);
+	z->HandleProcess(6);
+}
+
 

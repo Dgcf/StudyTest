@@ -24,6 +24,7 @@ int main()
 
     //test_visitor();
     //test_typetraits();
-    test_LockedStorage();
+    //test_LockedStorage();
+    test_ChainOfResponsibility();
 }
 

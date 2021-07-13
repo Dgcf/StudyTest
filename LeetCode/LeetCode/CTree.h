@@ -33,6 +33,8 @@ private:
 	bool SearchKey(int key, TreeNode* node);
 
 
+
+
 private:
 	TreeNode node_;
 };
