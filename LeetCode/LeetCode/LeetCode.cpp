@@ -9,7 +9,7 @@
 int main()
 {
     ForTest t;
-    t.test_sword_0();
+    t.test_erchashu();
     std::cout << "Hello World!\n";
 }
 

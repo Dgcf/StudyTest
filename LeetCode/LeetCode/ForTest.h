@@ -31,6 +31,11 @@ public:
 		int s = s_.test_3_0(a, sizeof(a) / sizeof(int));
 		cout << s << endl;
 	}
+
+	void test_erchashu()
+	{
+		tree_.generateTree(3);
+	}
 private:
 	DynamicProgram p_;
 	SwordOffer s_;

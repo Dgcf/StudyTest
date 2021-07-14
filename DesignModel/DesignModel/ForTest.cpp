@@ -109,4 +109,10 @@ void test_ChainOfResponsibility()
 	z->HandleProcess(6);
 }
 
+void test_MediatorA()
+{
+	AMediator a;
+	a.Changed();
+}
+
 

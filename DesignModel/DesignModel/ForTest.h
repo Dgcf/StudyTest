@@ -9,6 +9,7 @@
 #include "typetraits.h"
 #include "SmartPtr.h"
 #include "ChainOfResponsibility.h"
+#include "Mediator.h"
 
 // static int glo = Singletons2::Instance()->test();
 
@@ -58,3 +59,5 @@ void test_GetImpl_DefaultSPStorage();
 void test_LockedStorage();
 
 void test_ChainOfResponsibility();
+
+void test_MediatorA();

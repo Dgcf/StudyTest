@@ -39,6 +39,9 @@
     <ClCompile Include="ChainOfResponsibility.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Mediator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Singletons.h">
@@ -93,6 +96,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="ChainOfResponsibility.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Mediator.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

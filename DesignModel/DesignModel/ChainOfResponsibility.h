@@ -34,7 +34,6 @@ public:
 			return;
 			chain_->HandleProcess(i);  // 维护一个后继者链接
 		}
-		
 	}
 
 	void HandleRequest(Request* r)
