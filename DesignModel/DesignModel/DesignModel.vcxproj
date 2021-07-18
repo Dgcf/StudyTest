@@ -159,6 +159,7 @@
     <ClInclude Include="Functor.h" />
     <ClInclude Include="Mediator.h" />
     <ClInclude Include="MemAlloc.h" />
+    <ClInclude Include="Memento.h" />
     <ClInclude Include="Multimethods.h" />
     <ClInclude Include="policy.h" />
     <ClInclude Include="Singletons.h" />

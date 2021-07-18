@@ -1,5 +1,6 @@
 #include "ForTest.h"
 
+
 void print_var()
 {
 	// cout << "glo: " << glo << endl;
@@ -113,6 +114,11 @@ void test_MediatorA()
 {
 	AMediator a;
 	a.Changed();
+}
+
+void test_Memento()
+{
+	Memento m;
 }
 
 

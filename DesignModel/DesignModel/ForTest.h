@@ -10,6 +10,7 @@
 #include "SmartPtr.h"
 #include "ChainOfResponsibility.h"
 #include "Mediator.h"
+#include "Memento.h"
 
 // static int glo = Singletons2::Instance()->test();
 
@@ -61,3 +62,5 @@ void test_LockedStorage();
 void test_ChainOfResponsibility();
 
 void test_MediatorA();
+
+void test_Memento();
