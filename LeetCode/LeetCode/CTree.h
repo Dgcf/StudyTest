@@ -12,6 +12,22 @@
 };
 
 
+class Node {
+ public:
+	 int val;
+	 Node* left;
+	 Node* right;
+	 Node* next;
+
+	 Node() : val(0), left(NULL), right(NULL), next(NULL) {}
+
+	 Node(int _val) : val(_val), left(NULL), right(NULL), next(NULL) {}
+
+	 Node(int _val, Node* _left, Node* _right, Node* _next)
+		 : val(_val), left(_left), right(_right), next(_next) {}
+ };
+
+
 class CTree
 {
 public:
@@ -105,6 +121,42 @@ public:
 			return {};
 		}
 		return generateTrees(1, n);
+	}
+
+	// ·´×ª¶þ²æÊ÷
+	TreeNode* invertTree(TreeNode* root) {
+		if (!root)
+		{
+			return nullptr;
+		}
+		TreeNode* tmp = root->left;
+		if(root->left) root->left = root->right;
+		if(root->right) root->right = tmp;
+		invertTree(root->left);
+		invertTree(root->right);
+		return root;
+	}
+
+	Node* connect(Node* root) {
+		if (!root)
+		{
+			return nullptr;
+		}
+		ConnectTwoNode(root->left, root->right);
+		return root;
+	}
+
+	void ConnectTwoNode(Node* node1, Node* node2)
+	{
+		if (!node1 || !node2)
+		{
+			return;
+		}
+
+		node1->next = node2;
+		ConnectTwoNode(node1->left, node1->right);
+		ConnectTwoNode(node2->left, node2->right);
+		ConnectTwoNode(node1->right, node2->left);
 	}
 
 

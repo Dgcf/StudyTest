@@ -19,10 +19,12 @@ public:
 	}
 
 	// »Ö¸´±¸ÍüÂ¼
-	void SetMemento(const Memento& memento)
+	void GetState()
 	{
-
+		state_ = m_->get_state();
 	}
+
+
 };
 
 

@@ -118,7 +118,7 @@ void test_MediatorA()
 
 void test_Memento()
 {
-	Memento m;
+	
 }
 
 
