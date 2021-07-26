@@ -160,6 +160,78 @@ public:
 	}
 
 
+	TreeNode* constructMaximumBinaryTree(vector<int>& nums) {
+
+	}
+
+	void binary(vector<int>& v, vector<int>::iterator& it)
+	{
+		if (v.empty())
+		{
+			return;
+		}
+		int key = v.at(0);
+		for (vector<int>::iterator iter = v.begin(); iter != v.end(); ++iter)
+		{
+			if (key > *iter)
+			{
+				key = *iter;
+				it = iter;
+			}
+		}
+	}
+
+	void flatten(TreeNode* root)
+	{
+		ge(root);
+	}
+
+	TreeNode* ge(TreeNode* root)
+	{
+		if (!root) { return nullptr; }
+		ge(root->left);
+		ge(root->right);
+
+		TreeNode* node = root->right;
+		root->right = root->left;
+		root->right->right = node;
+		
+		return node;
+	}
+
+	void st(TreeNode* root)
+	{
+		if (!root)
+		{
+			return;
+		}
+
+		TreeNode* node = root->right;
+		root->right = ge(root->left);
+		root->right->right = node;
+	}
+
+
+	Node* connect1(Node* root) {
+		if (!root)
+		{
+			return NULL;
+		}
+		root->next = NULL;
+		cc(root->left, root->right);
+	}
+
+	void cc(Node* l, Node* r)
+	{
+		if (!l && !r) return;
+		
+		l->next = r;
+		cc(l->left, l->right);
+		cc(l->right, r->left);
+		cc(r->left, r->right);
+	}
+
+
 private:
 	TreeNode node_;
 };

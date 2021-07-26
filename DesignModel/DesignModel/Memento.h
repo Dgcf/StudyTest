@@ -2,8 +2,26 @@
 
 #include "common.h"
 
+class Originator;
 
-class Memento;
+class Memento
+{
+public:
+	friend class Originator;
+
+	// 窄接口
+	string get_state() const
+	{
+
+	}
+
+private:
+	// 宽接口
+	void set_state()
+	{
+
+	}
+};
 
 class Originator
 {
@@ -28,21 +46,4 @@ public:
 };
 
 
-class Memento
-{
-public:
-	friend class Originator;
 
-	// 窄接口
-	string get_state() const
-	{
-		
-	}
-
-private:
-	// 宽接口
-	void set_state()
-	{
-
-	}
-};

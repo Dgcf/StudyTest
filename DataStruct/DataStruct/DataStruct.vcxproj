@@ -158,6 +158,7 @@
     <ClInclude Include="CTree.h" />
     <ClInclude Include="CVector.h" />
     <ClInclude Include="ForTest.h" />
+    <ClInclude Include="Hash.h" />
     <ClInclude Include="Unorder.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

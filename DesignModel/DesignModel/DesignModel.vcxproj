@@ -156,6 +156,7 @@
     <ClInclude Include="Command.h" />
     <ClInclude Include="common.h" />
     <ClInclude Include="Composite.h" />
+    <ClInclude Include="decorator.h" />
     <ClInclude Include="factory.h" />
     <ClInclude Include="ForTest.h" />
     <ClInclude Include="Functor.h" />
@@ -164,6 +165,7 @@
     <ClInclude Include="Memento.h" />
     <ClInclude Include="Multimethods.h" />
     <ClInclude Include="policy.h" />
+    <ClInclude Include="Proxy.h" />
     <ClInclude Include="Singletons.h" />
     <ClInclude Include="SmartPtr.h" />
     <ClInclude Include="State.h" />

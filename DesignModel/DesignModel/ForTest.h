@@ -11,6 +11,7 @@
 #include "ChainOfResponsibility.h"
 #include "Mediator.h"
 #include "Memento.h"
+#include "decorator.h"
 
 // static int glo = Singletons2::Instance()->test();
 
@@ -64,3 +65,5 @@ void test_ChainOfResponsibility();
 void test_MediatorA();
 
 void test_Memento();
+
+void test_Decorator();

@@ -1,124 +1,127 @@
 #pragma once
 #include "common.h"
+
 class Mediator
 {
-};
-
-
-class DialogDirector;
-
-class Widget
-{
-private:
-	DialogDirector* dir_;
-
-public:
-	Widget(DialogDirector* d)
-		: dir_(d)
-	{}
-
-	virtual void changed()
-	{
-		dir_->WidgetChanged();
-	}
-};
-
-
-class ListWidget: public Widget
-{
-private:
-	string test_;
-
-public:
-	ListWidget(DialogDirector* d)
-		: Widget(d)
-	{}
-
-	void set_str(const string& s)
-	{
-		test_ = s;
-	}
-
-	string get_str() const
-	{
-		return test_;
-	}
-};
-
-
-class ButtonWidget : public Widget
-{
-private:
-	string test_;
-
-public:
-	ButtonWidget(DialogDirector* d)
-		: Widget(d)
-	{}
-
-	void set_str(const string& s)
-	{
-		test_ = s;
-	}
-
-	string get_str() const
-	{
-		return test_;
-	}
-};
-
-
-class EntryWidget : public Widget
-{
-private:
-	string test_;
-
-public:
-	EntryWidget(DialogDirector* d)
-		: Widget(d)
-	{}
-
-	void set_str(const string& s)
-	{
-		test_ = s;
-	}
-
-	string get_str() const
-	{
-		return test_;
-	}
 };
 
 
 class DialogDirector
 {
 public:
-	virtual void WidgetChanged()
+	virtual void WidgetAChanged()
 	{
 
 	}
 
-	virtual void CreateWidget() = 0;
+	virtual void CreateWidgetA() 
+	{
+	}
 
 };
+
+class WidgetA
+{
+private:
+	DialogDirector* dir_;
+
+public:
+	WidgetA(DialogDirector* d)
+		: dir_(d)
+	{}
+
+	virtual void changed()
+	{
+		dir_->WidgetAChanged();
+	}
+};
+
+
+class ListWidgetA: public WidgetA
+{
+private:
+	string test_;
+
+public:
+	ListWidgetA(DialogDirector* d)
+		: WidgetA(d)
+	{}
+
+	void set_str(const string& s)
+	{
+		test_ = s;
+	}
+
+	string get_str() const
+	{
+		return test_;
+	}
+};
+
+
+class ButtonWidgetA : public WidgetA
+{
+private:
+	string test_;
+
+public:
+	ButtonWidgetA(DialogDirector* d)
+		: WidgetA(d)
+	{}
+
+	void set_str(const string& s)
+	{
+		test_ = s;
+	}
+
+	string get_str() const
+	{
+		return test_;
+	}
+};
+
+
+class EntryWidgetA : public WidgetA
+{
+private:
+	string test_;
+
+public:
+	EntryWidgetA(DialogDirector* d)
+		: WidgetA(d)
+	{}
+
+	void set_str(const string& s)
+	{
+		test_ = s;
+	}
+
+	string get_str() const
+	{
+		return test_;
+	}
+};
+
+
+
 
 
 class FontDialogDirector : public DialogDirector
 {
 private:
-	ListWidget* list_;
-	ButtonWidget* button_;
-	EntryWidget* entry_;
+	ListWidgetA* list_;
+	ButtonWidgetA* button_;
+	EntryWidgetA* entry_;
 
 public:
-	void CreateWidget()
+	void CreateWidgetA()
 	{
-		list_ = new ListWidget(this);
-		button_ = new ButtonWidget(this);
-		entry_ = new EntryWidget(this);
+		list_ = new ListWidgetA(this);
+		button_ = new ButtonWidgetA(this);
+		entry_ = new EntryWidgetA(this);
 	}
 
-	virtual void WidgetChanged()
+	virtual void WidgetAChanged()
 	{
 		list_->set_str("FontDialogDirector");
 		button_->set_str("FontDialogDirector");
@@ -135,9 +138,9 @@ public:
 class FormalDialog
 {
 private:
-	ListWidget* list_;
-	ButtonWidget* button_;
-	EntryWidget* entry_;
+	ListWidgetA* list_;
+	ButtonWidgetA* button_;
+	EntryWidgetA* entry_;
 
 public:
 	void ListCtrl()

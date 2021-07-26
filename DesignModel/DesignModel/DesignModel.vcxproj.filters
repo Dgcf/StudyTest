@@ -113,5 +113,11 @@
     <ClInclude Include="Composite.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="decorator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Proxy.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

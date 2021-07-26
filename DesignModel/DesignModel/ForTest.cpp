@@ -112,13 +112,20 @@ void test_ChainOfResponsibility()
 
 void test_MediatorA()
 {
-	AMediator a;
-	a.Changed();
+	//AMediator a;
+	//a.Changed();
 }
 
 void test_Memento()
 {
 	
+}
+
+void test_Decorator()
+{
+	Window w;
+	TextView* view = new TextView();
+	w.SetContents(new ScrollDecorator(new BorderDecorator(view, 2)));
 }
 
 
