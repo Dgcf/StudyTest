@@ -145,6 +145,7 @@
     <ClCompile Include="LeetCode.cpp" />
     <ClCompile Include="Solution.cpp" />
     <ClCompile Include="SwordOffer.cpp" />
+    <ClCompile Include="TwentyTraining.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="commmon.h" />
@@ -153,6 +154,7 @@
     <ClInclude Include="ForTest.h" />
     <ClInclude Include="Solution.h" />
     <ClInclude Include="SwordOffer.h" />
+    <ClInclude Include="TwentyTraining.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

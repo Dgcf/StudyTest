@@ -2,6 +2,7 @@
 #include "CTree.h"
 #include "DynamicProgram.h"
 #include "SwordOffer.h"
+#include "TwentyTraining.h"
 
 
 class ForTest
