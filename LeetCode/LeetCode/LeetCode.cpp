@@ -9,7 +9,7 @@
 int main()
 {
     ForTest t;
-    t.test_erchashu();
+    t.test_search();
     std::cout << "Hello World!\n";
 }
 

@@ -37,8 +37,42 @@ public:
 	{
 		tree_.generateTree(3);
 	}
+
+	void rt()
+	{
+		ListNode* l1 = new ListNode(2);
+		l1->next = new ListNode(4);
+		l1->next->next = new ListNode(3);
+		ListNode* l2 = new ListNode(5);
+		l2->next = new ListNode(6);
+		l2->next->next = new ListNode(4);
+		t_.addTwoNumbers(l1, l2);
+	}
+	
+	void tt()
+	{
+		cout << t_.lengthOfLongestSubstring("ynyo") << endl;
+	}
+
+	void ll()
+	{
+		ListNode* node(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5, nullptr))))));
+		ListNode* node1(new ListNode(1, new ListNode(2, nullptr)));
+		t_.reverseList(node1);
+	}
+
+	void test_search()
+	{
+		vector<int> v{ 1,2,4,4,5 };
+		vector<int> v2{ 1,1,1,1,1 };
+		
+		//cout << t_.search(v, 4) << endl;
+		//cout << t_.search(v, 3) << endl;
+		cout << t_.search(v2, 1) << endl;
+	}
 private:
 	DynamicProgram p_;
 	SwordOffer s_;
+	TwentyTraining t_;
 };
 

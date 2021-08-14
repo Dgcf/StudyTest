@@ -128,4 +128,17 @@ void test_Decorator()
 	w.SetContents(new ScrollDecorator(new BorderDecorator(view, 2)));
 }
 
+void test_Command()
+{
+	ConcreteRcv1* rcv1 = new ConcreteRcv1();
+	ConcreteRcv2* rcv2 = new ConcreteRcv2();
+	ConcreteCmd1* cmd1 = new ConcreteCmd1(rcv1);
+	ConcreteCmd2* cmd2 = new ConcreteCmd2(rcv2);
+	Invoker i;
+	i.SetCmd(cmd1);
+	i.SetCmd(cmd2);
+	
+	i.Notify();
+}
+
 

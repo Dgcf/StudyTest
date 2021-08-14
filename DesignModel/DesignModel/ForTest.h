@@ -12,6 +12,7 @@
 #include "Mediator.h"
 #include "Memento.h"
 #include "decorator.h"
+#include "Command.h"
 
 // static int glo = Singletons2::Instance()->test();
 
@@ -67,3 +68,5 @@ void test_MediatorA();
 void test_Memento();
 
 void test_Decorator();
+
+void test_Command();
