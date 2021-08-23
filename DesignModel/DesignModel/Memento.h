@@ -12,38 +12,45 @@ public:
 	// 窄接口
 	string get_state() const
 	{
-
+		return state_;
 	}
 
 private:
-	// 宽接口
-	void set_state()
-	{
+	Memento(const string& s) : state_(s) {}
 
+	// 宽接口
+	void set_state(const Memento& s)
+	{
+		state_ = s.state_;
 	}
+
+private:
+	string state_;
 };
 
 class Originator
 {
 private:
-	Memento* m_;
 	string state_;
 
 public:
 	// 创建备忘录
-	void CreateMemento()
+	Memento* CreateMemento()
 	{
-		m_ = new Memento();
+		return new Memento(state_);
 	}
 
 	// 恢复备忘录
-	void GetState()
+	void SetState(Memento m)
 	{
-		state_ = m_->get_state();
+		m.set_state(m);
 	}
-
-
 };
 
+class Caretaker
+{
+private:
+	Memento* memento_;
 
+};
 

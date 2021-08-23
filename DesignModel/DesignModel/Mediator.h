@@ -1,10 +1,6 @@
 #pragma once
 #include "common.h"
 
-class Mediator
-{
-};
-
 
 class DialogDirector
 {
@@ -103,9 +99,6 @@ public:
 };
 
 
-
-
-
 class FontDialogDirector : public DialogDirector
 {
 private:
@@ -158,3 +151,129 @@ public:
 
 	}
 };
+
+
+
+// 中介者接口类:国际组织
+class InterOrg
+{
+public:
+	virtual void Declare(const string& str) = 0;
+	virtual ~InterOrg() {}
+};
+
+class Country
+{
+protected:
+	InterOrg* mediator_;
+
+public:
+	Country(InterOrg* m) : mediator_(m) {}
+
+	virtual string GetCountry() const = 0;
+	virtual void Declare(const string& str) = 0;
+};
+
+class China : public Country
+{
+public:
+	China(InterOrg* i) : Country(i) {}
+
+	void Declare(const string& str)
+	{
+		mediator_->Declare("attack");
+	}
+
+	string GetCountry() const
+	{
+		return "China";
+	}
+};
+
+class American : public Country
+{
+public:
+	American(InterOrg* i) : Country(i) {}
+
+	void Declare(const string& str)
+	{
+		cout << "American does not agree" << endl;
+	}
+
+	string GetCountry() const
+	{
+		return "American";
+	}
+};
+
+class Japan : public Country
+{
+public:
+	Japan(InterOrg* i) : Country(i) {}
+
+	void Declare(const string& str)
+	{
+		cout << "Japan does not agree" << endl;
+	}
+
+	string GetCountry() const
+	{
+		return "Japan";
+	}
+};
+
+class Russia : public Country
+{
+public:
+	Russia(InterOrg* i) : Country(i) {}
+
+	void Declare(const string& str)
+	{
+		cout << "Russia agree" << endl;
+	}
+
+	string GetCountry() const
+	{
+		return "Russia";
+	}
+};
+
+// 世界卫生组织
+class WHO: public InterOrg
+{
+public:
+	void Declare(const string& str)
+	{
+		american_->Declare("No");
+		japan_->Declare("No");
+		russia_->Declare("yes");
+	}
+
+	void Init(China* c, American* a, Japan* j, Russia* r)
+	{
+		china_ = c;
+		american_ = a;
+		japan_ = j;
+		russia_ = r;
+	}
+	
+private:
+	China* china_;
+	American* american_;
+	Japan* japan_;
+	Russia* russia_;
+};
+
+// 教科文组织
+class Unesco : public InterOrg
+{
+
+};
+
+// 世界银行
+class WorldBank : public InterOrg
+{
+
+};
+
+

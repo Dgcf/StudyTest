@@ -148,3 +148,92 @@ public:
 private:
 	static TCPClosed* instance_;
 };
+
+class Work;
+
+// 描述工作和工作状态
+class WorkState
+{
+public:
+	virtual void WorkProgram(Work* work) = 0;
+};
+
+// 睡眠状态
+class SleepingState : public WorkState
+{
+public:
+
+};
+
+// 下班休息状态
+class RestState : public WorkState
+{
+
+};
+
+// 晚上工作状态
+class EveningState : public WorkState
+{
+
+};
+
+// 下午工作状态
+class AfternoonState : public WorkState
+{
+
+};
+
+// 中午工作状态
+class NoonState : public WorkState
+{
+public:
+	void WorkProgram(Work* work)
+	{
+
+	}
+};
+
+// 上午工作状态
+class ForenoonState : public WorkState
+{
+public:
+	ForenoonState() :state_(new NoonState()) {}
+	
+	void WorkProgram(Work* work)
+	{
+		if (work->hour < 12)
+		{
+			cout << "当前工作时间：" << work->hour << endl;
+		}
+		else
+		{
+			work->SetState(state_);
+		}
+	}
+
+private:
+	NoonState* state_;
+};
+
+class Work
+{
+private:
+	WorkState* state_;
+	
+
+public:
+	// 自动设定当前状态
+	Work(WorkState* state=nullptr): state_(state ? state: new ForenoonState()) {}
+
+	void WorkPragrma()
+	{
+
+	}
+
+	void SetState(WorkState* s)
+	{
+		state_ = s;
+	}
+
+	int hour;
+};

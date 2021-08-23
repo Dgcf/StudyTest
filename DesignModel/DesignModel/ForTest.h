@@ -13,6 +13,8 @@
 #include "Memento.h"
 #include "decorator.h"
 #include "Command.h"
+#include "Observer.h"
+#include "TemplateMethod.h"
 
 // static int glo = Singletons2::Instance()->test();
 
@@ -70,3 +72,9 @@ void test_Memento();
 void test_Decorator();
 
 void test_Command();
+
+void test_Observer();
+
+void test_TemplateMethod();
+
+void test_Visitor();

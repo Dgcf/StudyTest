@@ -112,8 +112,13 @@ void test_ChainOfResponsibility()
 
 void test_MediatorA()
 {
-	//AMediator a;
-	//a.Changed();
+	WHO* who = new WHO;
+	China* c = new China(who);
+	American* a = new American(who);
+	Japan* j = new Japan(who);
+	Russia* r = new Russia(who);
+	who->Init(c, a, j, r);
+	c->Declare("hello");
 }
 
 void test_Memento()
@@ -139,6 +144,45 @@ void test_Command()
 	i.SetCmd(cmd2);
 	
 	i.Notify();
+}
+
+void test_Observer()
+{
+	ClockTimer* t = new ClockTimer();
+	DigitalClock d(t);
+	t->Tick();
+	system("pause");
+}
+
+void test_TemplateMethod()
+{
+	ConcreteClassA a;
+	a.TemplateMethod();
+	/*AbstractClass* pBasea = new ConcreteClassA;
+	AbstractClass* pBaseb = new ConcreteClassB;*/
+	
+}
+
+void test_Visitor()
+{
+	// 1
+	visitor::PreMan man;
+	man.GetMoneyStatus("a");
+	man.GetWorkStatus("b");
+
+	visitor::PreWoman wm;
+	wm.GetMoneyStatus("b");
+	wm.GetWorkStatus("a");
+	cout << "----------------------------------" << endl;
+	visitor::Man m;
+	visitor::Woman w;
+	visitor::Visitor* v1 = new visitor::WorkStatus();
+	visitor::Visitor* v2 = new visitor::MoneyStatus();
+
+	m.GetStatus(v1, "a");
+	m.GetStatus(v2, "b");
+	w.GetStatus(v1, "b");
+	w.GetStatus(v2, "a");
 }
 
 

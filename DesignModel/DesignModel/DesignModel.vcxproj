@@ -165,12 +165,15 @@
     <ClInclude Include="MemAlloc.h" />
     <ClInclude Include="Memento.h" />
     <ClInclude Include="Multimethods.h" />
+    <ClInclude Include="Observer.h" />
     <ClInclude Include="policy.h" />
     <ClInclude Include="Proxy.h" />
     <ClInclude Include="Singletons.h" />
     <ClInclude Include="SmartPtr.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="static_check.h" />
+    <ClInclude Include="Strategy.h" />
+    <ClInclude Include="TemplateMethod.h" />
     <ClInclude Include="TypeInfo.h" />
     <ClInclude Include="typelist.h" />
     <ClInclude Include="typetraits.h" />
