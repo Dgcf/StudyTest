@@ -9,6 +9,19 @@ public:
 	// 
 	vector<int> inorderTraversal(TreeNode* root);
 
+	int abc(TreeNode* root, int val)
+	{
+		if (!root)
+		{
+			return 0;
+		}
+		if (val == root->val)
+		{
+			return 1;
+		}
+		return abc(root->left, val) || abc(root->right, val);
+	}
+
 	// 
 	vector<TreeNode*> generateTrees(int n);
 

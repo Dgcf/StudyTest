@@ -185,4 +185,12 @@ void test_Visitor()
 	w.GetStatus(v2, "a");
 }
 
+void test_proxy()
+{
+	proxy::zhuojiayi* z = new proxy::zhuojiayi;
+	proxy::subject* s = new proxy::daili(z);
+	s->songhua();
+}
+
+
 

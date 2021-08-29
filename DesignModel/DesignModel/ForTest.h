@@ -15,6 +15,7 @@
 #include "Command.h"
 #include "Observer.h"
 #include "TemplateMethod.h"
+#include "Proxy.h"
 
 // static int glo = Singletons2::Instance()->test();
 
@@ -78,3 +79,5 @@ void test_Observer();
 void test_TemplateMethod();
 
 void test_Visitor();
+
+void test_proxy();
