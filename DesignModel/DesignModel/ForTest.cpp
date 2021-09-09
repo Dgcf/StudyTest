@@ -189,4 +189,12 @@ void test_Composite()
 {
 	composite::test();
 }
+void test_proxy()
+{
+	proxy::zhuojiayi* z = new proxy::zhuojiayi;
+	proxy::subject* s = new proxy::daili(z);
+	s->songhua();
+}
+
+
 

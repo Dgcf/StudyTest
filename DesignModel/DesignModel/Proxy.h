@@ -60,3 +60,35 @@ protected:
 private:
 	Image* image_;
 };
+
+namespace proxy
+{
+	class subject
+	{
+	public:
+		virtual void songhua() = 0;
+	};
+
+	class zhuojiayi: public subject
+	{
+	public:
+		void songhua()
+		{
+			cout << "zhuojiayi: " << __func__ << endl;
+		}
+	};
+
+	class daili: public subject
+	{
+	public:
+		daili(zhuojiayi* s) : z_(s) {}
+		void songhua()
+		{
+			cout << "daili: " << __func__ << endl;
+			z_->songhua();
+		}
+
+	private:
+		zhuojiayi* z_;
+	};
+}

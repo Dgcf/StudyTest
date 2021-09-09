@@ -25,6 +25,10 @@ int main()
     //test_visitor();
     //test_typetraits();
     //test_LockedStorage();
+<<<<<<< HEAD
     test_Composite();
+=======
+    test_proxy();
+>>>>>>> c3ac81cee8704584b9d7d93c3242ae832ed8f52d
 }
 
