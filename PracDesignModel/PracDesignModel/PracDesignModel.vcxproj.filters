@@ -30,6 +30,9 @@
     <ClCompile Include="State.cpp">
       <Filter>源文件\Behavior</Filter>
     </ClCompile>
+    <ClCompile Include="Mediator.cpp">
+      <Filter>源文件\Behavior</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="State.h">
@@ -40,6 +43,9 @@
     </ClInclude>
     <ClInclude Include="UnitTest.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Mediator.h">
+      <Filter>头文件\Behavior</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

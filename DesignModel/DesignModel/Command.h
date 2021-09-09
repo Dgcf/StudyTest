@@ -5,7 +5,7 @@
 class Receiver
 {
 public:
-	void virtual Action() = 0;
+	virtual void Action() = 0;
 };
 
 
@@ -36,12 +36,12 @@ public:
 		: r_(r)
 	{}
 
-	void virtual Execute()
+	virtual void  Execute()
 	{
 		cout << "Execute Do nothing" << endl;
 	}
 
-	void virtual UnExecute()
+	virtual void UnExecute()
 	{
 		cout << "UnExecute Do nothing" << endl;
 	}

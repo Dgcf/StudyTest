@@ -165,11 +165,21 @@ template<bool> struct CompileTimeError;
 template<> struct CompileTimeError<true> {};
 #define STATIC_CHECK(expr) (CompileTimeError<(expr) != 0>())
 
+class abcd
+{
+	char& x;
+};
 int main()
 {
-	Solution s;
+	/*Solution s;
 	std::vector<int> v{ 5,6,2,7,4 };
-	s.maxProductDifference(v);
+	s.maxProductDifference(v);*/
+	cout << sizeof(abcd) << endl;
+	char a = 'c';
+	char& x = a;
+	char* p = &a;
+	cout << sizeof(x) << endl;
+	cout << sizeof(p) << endl;
     return 0;
 }
 

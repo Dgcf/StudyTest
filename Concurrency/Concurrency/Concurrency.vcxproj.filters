@@ -21,12 +21,21 @@
     <ClCompile Include="AtomicTest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ThreadPromise.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AtomicTest.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="common.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadPromise.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="sync.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

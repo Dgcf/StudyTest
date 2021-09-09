@@ -97,10 +97,10 @@ void test_basic1()
 
 void test_bind_abc()
 {
-	ABC1 a;
-	std::function<void()> f = std::bind(&ABC1::open, a);
-	std::function<void()> f1 = std::bind(&ABC1::open, &a);
-	f();
+	//ABC1 a;
+	//std::function<void()> f = std::bind(&ABC1::open, a);
+	//std::function<void()> f1 = std::bind(&ABC1::open, &a);
+	//f();
 
 	//typedef void (ABC1::* f)();
 }

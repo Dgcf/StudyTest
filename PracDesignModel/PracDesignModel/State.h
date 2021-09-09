@@ -96,6 +96,8 @@ namespace state
 				state_->Handle(this, h);
 			}
 
+		private:
+			friend class WorkState;
 			void ChangeState(WorkState* t)
 			{
 				state_ = t;

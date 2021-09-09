@@ -28,6 +28,10 @@
 #include <memory>
 #include <type_traits>
 #include <iomanip>
+#include <exception>
+#include <stdexcept>
+#include <functional>
+#include <utility>
 
 using namespace std;
 

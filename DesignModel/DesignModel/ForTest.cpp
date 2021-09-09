@@ -185,4 +185,8 @@ void test_Visitor()
 	w.GetStatus(v2, "a");
 }
 
+void test_Composite()
+{
+	composite::test();
+}
 
