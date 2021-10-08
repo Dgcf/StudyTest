@@ -19,3 +19,10 @@ void test_MyTest1_0()
 }
 
 
+int nmb;
+void f_nmb()
+{
+	nmb = 25;
+}
+
+

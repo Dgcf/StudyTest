@@ -4,3 +4,6 @@
 
 
 void Macro_ToStr();
+
+
+void macro_text();

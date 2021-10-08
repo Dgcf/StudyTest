@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="DesignModel"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="msvc8"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="F:/study/code/C++/StudyTest/DesignModel/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f F:\study\code\C++\StudyTest\DesignModel\cmake-build-debug\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f F:\study\code\C++\StudyTest\DesignModel\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f F:\study\code\C++\StudyTest\DesignModel\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f F:\study\code\C++\StudyTest\DesignModel\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="DesignModel">
+				<Option output="F:/study/code/C++/StudyTest/DesignModel/cmake-build-debug/DesignModel.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/study/code/C++/StudyTest/DesignModel/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="F:/study/code/C++/StudyTest/DesignModel/DesignModel"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f F:\study\code\C++\StudyTest\DesignModel\cmake-build-debug\Makefile VERBOSE=1 DesignModel"/>
+					<CompileFile command="nmake /NOLOGO /f F:\study\code\C++\StudyTest\DesignModel\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f F:\study\code\C++\StudyTest\DesignModel\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f F:\study\code\C++\StudyTest\DesignModel\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="DesignModel/fast">
+				<Option output="F:/study/code/C++/StudyTest/DesignModel/cmake-build-debug/DesignModel.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/study/code/C++/StudyTest/DesignModel/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="F:/study/code/C++/StudyTest/DesignModel/DesignModel"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f F:\study\code\C++\StudyTest\DesignModel\cmake-build-debug\Makefile VERBOSE=1 DesignModel/fast"/>
+					<CompileFile command="nmake /NOLOGO /f F:\study\code\C++\StudyTest\DesignModel\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f F:\study\code\C++\StudyTest\DesignModel\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f F:\study\code\C++\StudyTest\DesignModel\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="F:/study/code/C++/StudyTest/DesignModel/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f F:\study\code\C++\StudyTest\DesignModel\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f F:\study\code\C++\StudyTest\DesignModel\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f F:\study\code\C++\StudyTest\DesignModel\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f F:\study\code\C++\StudyTest\DesignModel\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="F:/study/code/C++/StudyTest/DesignModel/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f F:\study\code\C++\StudyTest\DesignModel\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f F:\study\code\C++\StudyTest\DesignModel\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f F:\study\code\C++\StudyTest\DesignModel\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f F:\study\code\C++\StudyTest\DesignModel\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/AbstractFactory.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/Bridge.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/ChainOfResponsibility.cpp">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/ChainOfResponsibility.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/Command.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/Composite.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/DesignModel.cpp">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/Facade.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/ForTest.cpp">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/ForTest.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/Functor.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/Interpreter.cpp">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/Interpreter.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/Iterator.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/Mediator.cpp">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/Mediator.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/MemAlloc.cpp">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/MemAlloc.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/Memento.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/Multimethods.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/Observer.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/Proxy.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/Singletons.cpp">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/Singletons.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/SmartPtr.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/State.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/Strategy.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/TemplateMethod.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/TypeInfo.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/common.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/decorator.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/factory.cpp">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/factory.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/policy.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/static_check.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/typelist.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/typetraits.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/visitable.cpp">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/visitable.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/visitor.cpp">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/DesignModel/visitor.h">
+			<Option target="DesignModel"/>
+		</Unit>
+		<Unit filename="F:/study/code/C++/StudyTest/DesignModel/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

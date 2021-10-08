@@ -169,17 +169,18 @@ class abcd
 {
 	char& x;
 };
+
+int nmb = 20;
 int main()
 {
-	/*Solution s;
-	std::vector<int> v{ 5,6,2,7,4 };
-	s.maxProductDifference(v);*/
-	cout << sizeof(abcd) << endl;
+	/*cout << sizeof(abcd) << endl;
 	char a = 'c';
 	char& x = a;
 	char* p = &a;
 	cout << sizeof(x) << endl;
-	cout << sizeof(p) << endl;
+	cout << sizeof(p) << endl;*/
+	//macro_text();
+	f_nmb();
     return 0;
 }
 

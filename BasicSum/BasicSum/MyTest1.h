@@ -129,3 +129,7 @@ public:
 
 
 };
+
+
+
+void f_nmb();

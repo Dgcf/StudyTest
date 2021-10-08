@@ -1,0 +1,3 @@
+F:/study/code/C++/StudyTest/DesignModel/cmake-build-debug/CMakeFiles/DesignModel.dir
+F:/study/code/C++/StudyTest/DesignModel/cmake-build-debug/CMakeFiles/edit_cache.dir
+F:/study/code/C++/StudyTest/DesignModel/cmake-build-debug/CMakeFiles/rebuild_cache.dir

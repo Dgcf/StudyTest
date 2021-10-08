@@ -22,3 +22,18 @@ void Macro_ToStr()
 		cout << "!= " << endl;
 	}
 }
+
+
+#ifdef ABC
+void macro_text()
+{
+	cout << "1" << endl;
+}
+
+#else
+void macro_text()
+{
+	cout << "2" << endl;
+}
+
+#endif
